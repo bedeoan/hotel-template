@@ -64,7 +64,7 @@ const { data: room } = await useFetch(
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 90vh; /* Full height (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
