@@ -4,6 +4,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "start": "node .output/server/index.mjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -23,5 +24,10 @@
   "dependencies": {
     "nuxt-gmaps": "^1.2.10",
     "vue3-google-map": "^0.15.0"
+  },
+  "engines": {
+    "node": "16.16",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

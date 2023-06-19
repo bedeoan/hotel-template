@@ -5,7 +5,7 @@
         <nuxt-link to="/">
           <div class="flex">
             <div class="mr-5">
-              <img style="width: 50px" src="logo.png" />
+              <img style="width: 50px" src="/logo.png" />
             </div>
             <a href="#" class="text-2xl font-bold">Pensiunea Teleptean</a>
           </div>

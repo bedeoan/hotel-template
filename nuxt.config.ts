@@ -2,8 +2,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
       '@nuxtjs/tailwindcss',
-      '@element-plus/nuxt',
+      '@element-plus/nuxt'
   ],
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  },
   runtimeConfig: {
     secret: process.env.SECRET,
     public: {

@@ -2,7 +2,7 @@
   <div class="flex text-white bg-gray-600 text-sm flex-row h-60 p-10">
     <div class="flex-1 pa-5">
       <div class="mb-5">
-        <img style="width: 50px" src="logo.png" />
+        <img style="width: 50px" src="/logo.png" />
       </div>
       <div>
         {{ name }}
