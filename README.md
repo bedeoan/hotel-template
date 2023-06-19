@@ -1,12 +1,10 @@
 ## use node 16.16
-
 ### 
 add tailwind
 make dummy section with structure exact ca in exemple
 
 ### Dev stage
 -decide on framework for pickers and stufff, q-select like shit
-
 
 -dummy sections, llok good
 -decide on how to handle data fetching
@@ -41,7 +39,6 @@ step 3
 
 https://www.anahotels.ro/
 https://venishotel.ro/
-
 https://hotelstil.ro/
 place zonele
 
@@ -57,6 +54,9 @@ element ui - syntax
 -daca vreau button mare
 -daca vreau un overlay in mod elegant.
 -cum fac overlay in mod responsive ??
+
+
+-bug fantom pe ssr computed stuf mda...
 
 ### vreau sa termin si dupa fac refactoring...
 
@@ -85,9 +85,29 @@ tehnic todo
 gen sa poti prezenta si camera si si niste fitness facilities sau masaj stuff...
 
 
-### nu uita de zona de anunutri ??
 
 
 ## nu uita si de tailwind elements ?? poate poti folosi in loc de element ui ???
 vezi dimensiune
 vezi usurinta ??
+
+
+### TODO
+
+[ ] overlay de nume camerea se poate extrage intr-o componenta !!!
+[ ] env variables
+[ ] google key for map
+[ ] zona de promotii
+[ ] animatie !!! transitions !!!
+
+
+### ca sa pot arata ceva la client, sa pot sa inchid discutia si sa primesc niste bani !!
+
+
+
+## Personalizare
+de pus in env linkurile din taburi sa stiu ce anume prezint in taburi gen
+
+
+
+###

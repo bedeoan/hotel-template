@@ -1,7 +1,11 @@
 <template>
   <div>
     <div v-if="room">
-      <img v-if="room.profile_image" class="coverimg" :src="room.profile_image.url" />
+      <img
+        v-if="room.profile_image"
+        class="coverimg"
+        :src="room.profile_image.url"
+      />
       <div id="overlay"></div>
       <div class="text-white text-5xl" id="overlaytext">
         {{ room.name }}
@@ -25,9 +29,10 @@
         </ul>
 
         <div class="my-5">
-          La Pensiunea Teleptean, ne străduim să oferim oaspeților noștri o experiență
-        confortabilă și memorabilă. Toate camerele noastre sunt echipate cu cele
-        mai moderne facilități pentru a vă face sejurul cât mai plăcut posibil.
+          La Pensiunea Teleptean, ne străduim să oferim oaspeților noștri o
+          experiență confortabilă și memorabilă. Toate camerele noastre sunt
+          echipate cu cele mai moderne facilități pentru a vă face sejurul cât
+          mai plăcut posibil.
         </div>
       </div>
     </div>
