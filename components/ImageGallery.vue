@@ -1,22 +1,39 @@
 <template>
   <div>
-    <div style="width: 80vw" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div v-if="oneImageUrl === undefined" style="width: 80vw" class="grid grid-cols-2 md:grid-cols-3 gap-4">
       <div v-for="(image, index) in images" :key="image.id">
         <img
-          @click="() => {
-            carousel.setActiveItem(index);
-            dialogVisible = true
-          }"
+          @click="
+            () => {
+              dialogVisible = true;
+              carousel.setActiveItem(index);
+              i = index
+            }
+          "
           class="h-auto max-w-full rounded-lg"
           :src="image.formats.small ? image.formats.small.url : image.url"
           alt=""
         />
       </div>
     </div>
+    <div v-else>
+      <img
+          @click="
+            () => {
+              dialogVisible = true;
+              carousel.setActiveItem(oneImageIndex);
+              i = oneImageIndex
+            }
+          "
+          class="h-auto max-w-full rounded-lg"
+          style="width:200px;"
+          :src="oneImageUrl"
+        />
+    </div>
     <client-only>
       <el-dialog
         :show-close="false"
-        modal="true"
+        :modal="true"
         fullscreen
         v-model="dialogVisible"
       >
@@ -36,29 +53,41 @@
         </div>
         <div class="flex flex-row">
           <div class="flex">
-            <el-button type="text" :icon="ArrowLeft" style="height:80vh" @click="setActiveItem(-1)"></el-button>
+            <el-button
+              link
+              :disabled="i == images.length == 0"
+              :icon="ArrowLeft"
+              style="height: 80vh;font-size:10vh"
+              @click="setActiveItem(-1)"
+            ></el-button>
           </div>
-         <div class="flex-1">
-          <el-carousel
-            ref="carousel"
-            :indicator-position="i"
-            height="auto"
-            arrow="never"
-          >
-            <el-carousel-item
-            style="height: 80vh"
-            v-for="(image, j) in images"
-            :key="image"
-            :name="j"
+          <div class="flex-1">
+            <el-carousel
+              ref="carousel"
+              :indicator-position="i"
+              height="auto"
+              arrow="never"
             >
-              <div class="flex justify-center">
-                <img style="height: 90vh" :src="image.url" alt="" />
-              </div>
-            </el-carousel-item>
-          </el-carousel>
-         </div>
+              <el-carousel-item
+                style="height: 80vh"
+                v-for="(image, j) in images"
+                :key="image"
+                :name="j"
+              >
+                <div class="flex justify-center">
+                  <img style="height: 90vh" :src="image.url" alt="" />
+                </div>
+              </el-carousel-item>
+            </el-carousel>
+          </div>
           <div class="flex">
-            <el-button type="text" :icon="ArrowRight" style="height:80vh" @click="setActiveItem(1)"></el-button>
+            <el-button
+              :disabled="i == images.length-1"
+              link
+              :icon="ArrowRight"
+              style="height: 80vh;font-size:10vh"
+              @click="setActiveItem(1)"
+            ></el-button>
           </div>
         </div>
       </el-dialog>
@@ -71,11 +100,12 @@ const config = useRuntimeConfig();
 const dialogVisible = ref(false);
 const props = defineProps({
   images: Array,
+  oneImageUrl: String
 });
 const i = ref(0);
 const carousel = ref(null);
 const setActiveItem = (index) => {
-  i.value -= index;
+  i.value = i.value + index;
   carousel.value.setActiveItem(i.value);
 };
 </script>

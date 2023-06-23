@@ -13,7 +13,7 @@
       <span v-if="label">{{ label }}</span>
       <span v-else>rezerva</span>
     </el-button>
-    <el-dialog width="20%" modal="true" v-model="dialogVisible">
+    <el-dialog width="20%" :modal="true" v-model="dialogVisible">
       <div class="flex justify-center">
         <div>
           <div class="text-2xl mb-2">Pentru rezervari</div>
@@ -21,7 +21,7 @@
             <div class="ml-2">
               <div class="my-3">
                 <el-button
-                  type="text"
+                  link
                   @click="callClient(config.public.CONTACT_PHONE1)"
                 >
                   <el-icon class="mr-2" size="large"><Phone /></el-icon>
@@ -30,7 +30,7 @@
               </div>
               <div>
                 <el-button
-                  type="text"
+                  link
                   @click="callClient(config.public.CONTACT_PHONE2)"
                 >
                   <el-icon class="mr-2" size="large"><Phone /></el-icon>

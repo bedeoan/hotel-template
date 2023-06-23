@@ -45,7 +45,7 @@
   right: 0;
   display: block;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.785); /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.861); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }

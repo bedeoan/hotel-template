@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="flex justify-center my-5">
-      <BookButton></BookButton>
+      <BookButton label="Rezerva acum"></BookButton>
     </div>
     <div v-if="room && room.images" class="flex justify-center mb-5">
       <ImageGallery

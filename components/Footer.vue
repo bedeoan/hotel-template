@@ -1,5 +1,8 @@
 <template>
-  <div id="footer" class="flex text-white bg-gray-600 text-sm flex-row h-60 p-10">
+  <div
+    id="footer"
+    class="flex text-white bg-gray-600 text-sm flex-row h-60 p-10"
+  >
     <div class="flex-1 pa-5">
       <div class="mb-5">
         <img style="width: 50px" src="/logo.png" />
@@ -7,7 +10,7 @@
       <div>
         {{ name }}
       </div>
-      <div style="width:30vw">
+      <div style="width: 30vw">
         {{ reclama }}
       </div>
       <div class="mt-5">
@@ -16,11 +19,14 @@
         </a>
       </div>
     </div>
-    <div class="flex-1 pa-5">
-      <div class="mb-2">Oferte</div>
+    <div class="flex-1 p-5">
+      <div>Pentu oferte si promotii</div>
       <div class="w-50">
-        <el-input v-model="email"></el-input>
-        <!-- <t-input placeholder="email"></t-input> -->
+        <el-input placeholder="email" v-model="email"></el-input>
+        <el-checkbox
+          style="color: white"
+          label="sunt de acord sa primesc oferte si promotii"
+        ></el-checkbox>
       </div>
       <div class="mt-2">
         <el-button type="primary">Aboneaza-ma</el-button>
@@ -29,9 +35,15 @@
     <div class="flex-1 flex justify-center pl-10">
       <div class="flex flex-row">
         <div class="flex-1 mr-10">
-          <div class="mb-2 link link-hover">Acasa</div>
-          <div class="mb-2 link link-hover">Camere</div>
-          <div class="mb-2 link link-hover">Contact</div>
+          <div class="mb-2 link link-hover">
+            <nuxt-link class="hover:underline" to="/"> Acasa </nuxt-link>
+          </div>
+          <div class="mb-2 link link-hover">
+            <nuxt-link class="hover:underline" to="/book"> Camere </nuxt-link>
+          </div>
+          <div class="mb-2 link link-hover">
+            <nuxt-link class="hover:underline" to="/contact"> Contact </nuxt-link>
+          </div>
         </div>
 
         <div class="flex-1">
@@ -54,5 +66,6 @@ const address = "Str. Unirii 1C, Ocna Sugatag";
 const city = "437205 Ocna Sugag, România";
 const phone = "(+40) 262-374177";
 const email = "";
-const reclama= 'Daca treci prin Maramures si ai nevoie de o un loc de cazare primitor, Pensiunea Teleptean este alegerea ideala.'
+const reclama =
+  "Daca treci prin Maramures si ai nevoie de o un loc de cazare primitor, Pensiunea Teleptean este alegerea ideala.";
 </script>

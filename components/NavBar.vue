@@ -25,19 +25,12 @@
                 </el-button>
                 <template #dropdown>
                   <el-dropdown-menu>
-                    <el-dropdown-item>
-                      <nuxt-link to="room/15"> Aparamament </nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="room/17"> Camera dubla </nuxt-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <nuxt-link to="room/16"> Camera dubla </nuxt-link>
+                    <el-dropdown-item v-for="room in roomsWithPrice" :key="room.id">
+                      <nuxt-link :to="`room/${room.id}`"> {{ room.name }} </nuxt-link>
                     </el-dropdown-item>
                   </el-dropdown-menu>
                 </template>
               </el-dropdown>
-              <!-- <a href="#" class="hover:underline">Camere</a> -->
             </li>
             <li class="sm:mr-5 pt-1">
               <nuxt-link class="hover:underline" to="/Gallery">
@@ -88,6 +81,11 @@
 import { ArrowDown } from "@element-plus/icons-vue";
 
 const isOpen = ref(false);
+const { data: rooms } = await useFetch(
+  "https://apisite.teleptean.facturi.erpx.ro/rooms"
+);
+const roomsWithPrice = computed(() => rooms.value ? rooms.value.filter(x => x.price) : [] )
+
 </script>
 
 <style scoped>

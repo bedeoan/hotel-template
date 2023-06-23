@@ -105,23 +105,43 @@ nr of pers from api and
 show only rooms with a price
 poza room sa fie frumoasa.- daca da click sa il duca la prezentare room.
 
-Todo vineri
-[ ] gallery image
-[ ] footer absoulte bottom
-[ ] redirec to room page button
-[ ] call button in room page
-[ ] clickable image pe camera sa deschida preview de poza !!!
-[ ] button de select date sa fie in pagina de book.
-[ ] fa un import general pentu icons si altele si acol pui tot si il folosesti
+## Todo vineri
+## termin cu usablity
+[ x] gallery image
+[ x] footer absoulte bottom
+[ x] redirec to room page button
+[ x] call button in room page
+[x] clickable image pe camera sa deschida preview de poza !!!
+
+
+[ ] zoom in hover on all rom images
+    - exmeplu izolat
+    -aplly
 [ ] poze dinamice some interaction man !!
-[ ] Mobile
+
+[ ] Mobile optimization. text all
+
+## FInal touch
+[ ] button de select date sa fie in pagina de book.
+[ ] font family please
+
+## content
+tot pe romana
+poze corecte si alese frumos
+contect corect text scris frumos...
+vezi poza cu doamnna
+asociaza poze pe camere corect -task vera luni !!!
+
+
+## code
+[ ] fa un import general pentu icons si altele si acol pui tot si il folosesti
 ---
 cum faci functionle generale gen cu boot???
 
 
 
 -----
-cost
+## cost
 - 2600 lei - Site Nuxt + Settup,Responsive si pe mobile (Super fast si secure)
 - 400 lei Facut Poze in teren + Editare poze
 -----

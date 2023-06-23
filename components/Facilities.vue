@@ -2,7 +2,7 @@
   <div class="flex row parent" style="height: 80vh">
     <div class="flex-1">
       <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
-      <div class="text-center my-5">
+      <div class="text-center my-5 px-3">
         Modernly equipped fitness room for all types of exercise. The gym has
         modern equipment including treadmills, bikes, steppers, weights, etc.
         The Pensiunea Teleptean fitness room has space for all types of
@@ -31,10 +31,10 @@
             Masaj
           </li>
           <li class="mt-5">
-            <el-button size="large" type="primary">
+            <!-- <el-button size="large" type="primary">
               <el-icon class="mr-2"><InfoFilled /></el-icon>
-              Mai multe informatii
-            </el-button>
+            </el-button> -->
+            <BookButton  label="Mai multe informatii"></BookButton>
           </li>
         </ul>
       </div>

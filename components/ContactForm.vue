@@ -11,7 +11,7 @@
             Address
           </div>
 
-          <div>
+          <div class="ml-3">
             {{ address }}
           </div>
 
@@ -22,14 +22,14 @@
           <div class="ml-2">
             <div class="my-2">
               <el-button
-                type="text"
+                link
                 @click="callClient(config.public.CONTACT_PHONE1)"
                 >{{ config.public.CONTACT_PHONE1 }}</el-button
               >
             </div>
             <div>
               <el-button
-                type="text"
+                link
                 @click="callClient(config.public.CONTACT_PHONE2)"
                 >{{ config.public.CONTACT_PHONE2 }}</el-button
               >
@@ -40,7 +40,7 @@
             <el-icon size="large"><Message /></el-icon>
             Email Address
           </div>
-          <div>office@teleptean.ro</div>
+          <div class="ml-3">office@teleptean.ro</div>
           <div>
             <el-button
               size="large"

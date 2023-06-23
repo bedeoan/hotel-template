@@ -4,7 +4,6 @@
       <div class="parent">
         <img
           :src="image"
-          :class="!hideOverlay ? '' : ''"
         />
         <div v-if="!hideOverlay" class="overlay">
           <div class="text-white text-2xl px-5 ml-2" style="margin-top:15%">
