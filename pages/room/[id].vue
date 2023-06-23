@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div v-if="room" class="flex justify-center">
+    <div v-if="room" class="flex justify-center mb-5">
       <ImageGallery
         :images="room.images"
         :index="index"

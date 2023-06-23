@@ -23,6 +23,8 @@ export default defineNuxtConfig({
       GOOGLE_API: process.env.GOOGLE_API,
       LATITUDE: process.env.LATITUDE,
       LONGITUDE: process.env.LONGITUDE,
+      CONTACT_PHONE1: process.env.CONTACT_PHONE1,
+      CONTACT_PHONE2: process.env.CONTACT_PHONE2
     }
   }
 });

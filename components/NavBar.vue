@@ -50,7 +50,9 @@
               </nuxt-link>
             </li>
             <li class="mx-2">
-              <el-button type="primary">Book now</el-button>
+              <nuxt-link  to="/Book">
+                <el-button type="primary">Book now</el-button>
+              </nuxt-link>
             </li>
           </ul>
         </nav>

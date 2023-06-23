@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="flex-1 pa-5">
-      <div>Oferte</div>
+      <div class="mb-2">Oferte</div>
       <div class="w-50">
         <el-input v-model="email"></el-input>
         <!-- <t-input placeholder="email"></t-input> -->

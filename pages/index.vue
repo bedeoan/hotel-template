@@ -60,7 +60,7 @@
     </div>
 
     <!-- about section -->
-    <div style="height: 100vh; margin-top: 150px">
+    <div style="height: 100vh; margin-top: 10vh">
       <div class="text-4xl text-center">Despre Pensiunea Teleptean</div>
       <div class="text-xl flex justify-center mt-5">
         <div class="" style="width: 60vw">
@@ -127,7 +127,6 @@
     <Spa></Spa>
     <BeHappy></BeHappy>
     <ContactForm></ContactForm>
-    <Footer></Footer>
   </div>
 </template>
 
