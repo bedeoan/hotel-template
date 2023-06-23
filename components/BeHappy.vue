@@ -21,7 +21,10 @@
         având încrederea că ne ocupăm de tot ce ține de confortul dumneavoastră.
         Dacă aveți întrebări pentru noi:
       </div>
-      <el-button size="large" type="primary">Contacteaza-ne</el-button>
+      <!-- <el-button size="large" type="primary">
+        Contacteaza-ne
+      </el-button> -->
+      <BookButton label="Contacteaza-ne"></BookButton>
     </div>
   </div>
 </template>

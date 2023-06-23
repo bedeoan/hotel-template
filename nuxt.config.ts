@@ -24,7 +24,8 @@ export default defineNuxtConfig({
       LATITUDE: process.env.LATITUDE,
       LONGITUDE: process.env.LONGITUDE,
       CONTACT_PHONE1: process.env.CONTACT_PHONE1,
-      CONTACT_PHONE2: process.env.CONTACT_PHONE2
+      CONTACT_PHONE2: process.env.CONTACT_PHONE2,
+      HOTEL_NAME: process.env.HOTEL_NAME
     }
   }
 });

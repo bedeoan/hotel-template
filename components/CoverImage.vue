@@ -16,17 +16,17 @@
 
         <div class="flex pa-2">
           <img
-            class="w-60"
+            class="w-1/3"
             src="https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00683_1_6db8970f0f.jpg"
             alt=""
           />
           <img
-            class="w-60"
+            class="w-1/3"
             src="https://www.teleptean.ro/images/pool/piscinaa.jpg"
             alt=""
           />
           <img
-            class="w-40"
+            class="w-1/3"
             src="https://www.teleptean.ro/images/pool/piscina.jpg"
             alt=""
           />

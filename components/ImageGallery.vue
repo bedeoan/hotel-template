@@ -12,10 +12,16 @@
     </div>
     <client-only>
       <el-dialog modal="true" fullscreen v-model="dialogVisible">
-        <div>
-          <el-button :icon="Back" @click="dialogVisible = false"
-            >Inapoi</el-button
-          >
+        <div class="flex row">
+          <div class="flex-1">
+            <el-button :icon="Back" @click="dialogVisible = false"
+              >Inapoi</el-button
+            >
+          </div>
+          <div class="flex-1">
+            {{ config.public.HOTEL_NAME }}
+            <BookButton></BookButton>
+          </div>
         </div>
         <el-carousel height="auto" indicator-position="outside">
           <el-carousel-item

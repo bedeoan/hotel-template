@@ -105,14 +105,15 @@ nr of pers from api and
 show only rooms with a price
 poza room sa fie frumoasa.- daca da click sa il duca la prezentare room.
 
-
+Todo vineri
 [ ] footer absoulte bottom
 [ ] redirec to room page button
 [ ] call button in room page
 [ ] clickable image pe camera sa deschida preview de poza !!!
 [ ] button de select date sa fie in pagina de book.
 [ ] fa un import general pentu icons si altele si acol pui tot si il folosesti
-
+[ ] poze dinamice some interaction man !!
+[ ] Mobile
 ---
 cum faci functionle generale gen cu boot???
 
@@ -136,4 +137,12 @@ cost
 ## Campanii serioase ce aduc trafic
 ->vb cu darius si cu edi
 
+## Integrare cu sistem rezevari 500 lei.
+------
 
+
+### Mindset ce ofer la client 
+-docs gen ce-i cu site-ul, acces cod sursa..
+
+Acces platforma costumizari
+https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collectionType/application::rooms.rooms/17

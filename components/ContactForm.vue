@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 p-5">
+    <div class="flex-1 p-5 mr-5">
       <client-only>
         <GoogleMap
           :api-key="config.public.GOOGLE_API"

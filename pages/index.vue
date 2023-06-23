@@ -60,7 +60,7 @@
     </div>
 
     <!-- about section -->
-    <div style="height: 100vh; margin-top: 10vh">
+    <div style="height: 100vh; margin-top: 5vh">
       <div class="text-4xl text-center">Despre Pensiunea Teleptean</div>
       <div class="text-xl flex justify-center mt-5">
         <div class="" style="width: 60vw">
@@ -178,10 +178,10 @@ const children = ref(0);
 #overlaytext {
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
+  width: 60%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 35vh;
-  left: 25vw;
+  left: 20vw;
   right: 0;
   display: block;
   bottom: 0;
