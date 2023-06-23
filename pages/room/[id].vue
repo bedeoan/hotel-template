@@ -36,7 +36,10 @@
         </div>
       </div>
     </div>
-    <div v-if="room" class="flex justify-center mb-5">
+    <div class="flex justify-center my-5">
+      <BookButton></BookButton>
+    </div>
+    <div v-if="room && room.images" class="flex justify-center mb-5">
       <ImageGallery
         :images="room.images"
         :index="index"

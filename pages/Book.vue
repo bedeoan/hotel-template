@@ -1,9 +1,9 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center roomsarea">
       <div style="width: 84vw" class="my-5">
-        <div v-for="room in roomsWithPrice" :key="room.id" class="flex row mb-2">
+        <div v-for="room in roomsWithPrice" :key="room.id" class="flex row m-2 mt-5">
           <div class="flex-1 flex row">
             <div v-if="room.profile_image">
               <img  style="width: 15vw;border-radius: 10px;" :src="room.profile_image.url" />
@@ -25,7 +25,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -38,3 +37,9 @@ const { data: rooms } = await useFetch(
 
 const roomsWithPrice = computed(() => rooms.value ? rooms.value.filter(x => x.price) : [] )
 </script>
+
+<style>
+.roomsarea {
+  height:80vh
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex text-white bg-gray-600 text-sm flex-row h-60 p-10">
+  <div id="footer" class="flex text-white bg-gray-600 text-sm flex-row h-60 p-10">
     <div class="flex-1 pa-5">
       <div class="mb-5">
         <img style="width: 50px" src="/logo.png" />
@@ -33,13 +33,11 @@
           <div class="mb-2 link link-hover">Camere</div>
           <div class="mb-2 link link-hover">Contact</div>
         </div>
+
         <div class="flex-1">
           <div class="mb-2 link link-hover">Contact</div>
           <div>
             {{ city }}
-          </div>
-          <div>
-            {{ contact }}
           </div>
           <div class="mt-5">
             <nuxt-link to="https://anpc.ro/">ANPC</nuxt-link>

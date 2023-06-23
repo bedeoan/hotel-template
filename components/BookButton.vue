@@ -7,9 +7,9 @@
           markConversion();
         }
       "
+      class="flex row"
       type="primary"
     >
-      <el-icon class="mr-2"><Check /></el-icon>
       <span v-if="label">{{ label }}</span>
       <span v-else>rezerva</span>
     </el-button>

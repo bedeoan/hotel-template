@@ -106,6 +106,7 @@ show only rooms with a price
 poza room sa fie frumoasa.- daca da click sa il duca la prezentare room.
 
 Todo vineri
+[ ] gallery image
 [ ] footer absoulte bottom
 [ ] redirec to room page button
 [ ] call button in room page
@@ -146,3 +147,7 @@ cost
 
 Acces platforma costumizari
 https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collectionType/application::rooms.rooms/17
+
+
+## dificulati intampinate
+-un simplu trigger move to next in carousel
