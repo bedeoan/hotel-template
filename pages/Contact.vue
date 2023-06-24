@@ -1,6 +1,3 @@
 <template>
-    <div>
-        <NavBar></NavBar>
-        <ContactForm></ContactForm>
-    </div>
+    <ContactForm></ContactForm>
 </template>

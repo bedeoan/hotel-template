@@ -2,12 +2,11 @@
   <div>
     <div class="flex images">
       <img
-        style="height:90vh"
-        class="object-top transition-all ease-in-out duration-10000 transform"
+        :style="$device.isMobile ? 'height:50vh' : 'height:90vh'"
         src="https://aventurescu.ro/wp-content/uploads/2016/07/ecomaramures2.jpg"
         alt="Hotel Image"
       />
-      <div>
+      <div v-if="!$device.isMobile">
         <img
           class="w-full"
           src="https://www.teleptean.ro/articleimages/noutati/despre-noi-04.jpg"

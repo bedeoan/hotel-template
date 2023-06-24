@@ -1,7 +1,7 @@
 <template>
-  <div class="flex row" style="margin-top: 50px; margin-bottom: 50px">
+  <div :class="$device.isMobile ? '' : 'flex'" style="margin-top: 50px; margin-bottom: 50px">
     <div class="flex-1 flex justify-center mt-5">
-      <div style="width: 30vw">
+      <div :style="$device.isMobile ? 'width: 96%': 'width:300px'">
         <div>
           <div class="text-2xl mb-5">Contacteaza-ne</div>
         </div>
@@ -55,11 +55,11 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 p-5 mr-5">
+    <div class="flex-1 mt-5 p-1">
       <client-only>
         <GoogleMap
           :api-key="config.public.GOOGLE_API"
-          style="width: 100%; height: 500px"
+          :style="$device.isMobile ? 'width: 100vw; height:100vw' : 'width:100%;height:60vh' "
           :center="center"
           :zoom="10"
         >

@@ -1,30 +1,22 @@
 <template>
-  <div style="height: 30vh; position: relative" class="bg-red-200">
-    <!-- <div>
-            Enjoy your Time with Us
+  <div style="height: 45vh; position: relative" class="flex items-center">
+    <div>
+      <img
+        class="coverimg"
+        src="https://hotelstil.ro/wp-content/uploads/2022/04/Mask-group.png"
+      />
+      <div class="overlay"></div>
+      <div class="overlaytext">
+        <div class="text-3xl" style="margin-top: 50px">
+          Bucura-te de timpul petrecut alaturi de noi
         </div>
-        <div>
-            You can enjoy a relaxing and peaceful stay at Hotel Stil knowing that we take care of everything that concerns your comfort. If you have any questions for us:
+        <div class="my-5 px-2">
+          Puteți avea o ședere relaxantă și liniștită la Pensiunea Teleptean,
+          având încrederea că ne ocupăm de tot ce ține de confortul
+          dumneavoastră. Dacă aveți întrebări pentru noi:
         </div>
-        <div>
-            <el-button>Contact</el-button>
-        </div> -->
-    <img
-      class="coverimg"
-      src="https://hotelstil.ro/wp-content/uploads/2022/04/Mask-group.png"
-    />
-    <div class="overlay"></div>
-    <div class="overlaytext">
-      <div class="text-3xl" style="margin-top:50px">Bucura-te de timpul petrecut alaturi de noi</div>
-      <div class="my-5">
-        Puteți avea o ședere relaxantă și liniștită la Pensiunea Teleptean,
-        având încrederea că ne ocupăm de tot ce ține de confortul dumneavoastră.
-        Dacă aveți întrebări pentru noi:
+        <BookButton label="Contacteaza-ne"></BookButton>
       </div>
-      <!-- <el-button size="large" type="primary">
-        Contacteaza-ne
-      </el-button> -->
-      <BookButton label="Contacteaza-ne"></BookButton>
     </div>
   </div>
 </template>
@@ -32,14 +24,14 @@
 <style scoped>
 .coverimg {
   width: 100vw;
-  height: 30vh;
+  height: 38vh;
   object-fit: cover;
 }
 .overlay {
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 30vh; /* Full height (cover the whole page) */
+  height: 45vh; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
@@ -54,7 +46,7 @@
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 0;
+  top: 1vh;
   right: 0;
   display: block;
   bottom: 0;

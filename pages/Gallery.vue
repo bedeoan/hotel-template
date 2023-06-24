@@ -1,6 +1,5 @@
 <template>
   <div class="mb-5">
-    <NavBar></NavBar>
     <div>
       <el-tabs v-model="tab" type="border-card">
         <el-tab-pane

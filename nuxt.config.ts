@@ -2,7 +2,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
       '@nuxtjs/tailwindcss',
-      '@element-plus/nuxt'
+      '@element-plus/nuxt',
+      '@nuxtjs/device'
   ],
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -25,7 +26,8 @@ export default defineNuxtConfig({
       LONGITUDE: process.env.LONGITUDE,
       CONTACT_PHONE1: process.env.CONTACT_PHONE1,
       CONTACT_PHONE2: process.env.CONTACT_PHONE2,
-      HOTEL_NAME: process.env.HOTEL_NAME
+      HOTEL_NAME: process.env.HOTEL_NAME,
+      CUI: process.env.CUI
     }
   }
 });

@@ -1,131 +1,107 @@
 <template>
   <div>
-    <NavBar></NavBar>
     <CoverImage></CoverImage>
-    <div id="overlay"></div>
+    <div
+      :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
+      id="overlay"
+    ></div>
     <div id="overlaytext">
-      <div
-        class="text-3xl text-white mb-5"
-        style="width: 600px; margin-left: 200px"
-      >
-        Rezervă-ți vacanța la Pensiunea Teleptean chiar in inima Maramuresului.
+      <div class="title leading-10 text-white mb-5">
+        {{ coverTitle }}
       </div>
-      <div class="text-white" style="width: 900px">
-        Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră,
-        o oază de relaxare și ospitalitate în inima României. Îmbinând tradiția
-        cu confortul modern, te invităm să te bucuri de o experiență de neuitat
-        într-un peisaj idilic, cu dealuri verzi și sate pitorești.
+      <div class="text-white text-center description">
+        <div v-if="!$device.isMobile">
+          {{ coverDescription }}
+        </div>
+        <!-- <span v-else>
+        {{ coverDescriptionMobile }}
+       </span> -->
       </div>
-      <div class="text-white text-2xl mt-8" style="width: 900px">
+      <div class="text-white text-center description2 mt-8">
         Tratament balneoclimateric, Conditii moderne, Obiective turistice usor
         accesibile
       </div>
-      <div></div>
+      <div v-if="$device.isMobile" class="flex" style="margin-top:10px;">
+        <img
+          class="w-1/2"
+          src="https://www.teleptean.ro/articleimages/noutati/despre-noi-04.jpg"
+          alt=""
+        />
+        <img
+            class="w-1/2"
+            src="https://www.teleptean.ro/images/pool/piscinaa.jpg"
+            alt=""
+          />
+      </div>
     </div>
-
-    <div class="bookingbar flex bg-white p-2">
-      <div class="bookingbarTitle">
-        <div>Check in</div>
-        <div>
+    <!-- BookingBar -->
+    <div
+      :class="
+        $device.isMobile
+          ? 'bookingbarMobile flex flex-wrap justify-center bg-white p-2'
+          : 'bookingbar flex bg-white p-2'
+      "
+    >
+      <div :class="$device.isMobile ? '' : 'flex flex-row'">
+        <div class="bookingbarTitle">
+          <div>Check in</div>
+          <div>
+            <el-date-picker
+              v-model="checkIn"
+              type="date"
+              placeholder="Alege data"
+            >
+            </el-date-picker>
+          </div>
+        </div>
+        <div class="bookingbarTitle">
+          <div>Check out</div>
           <el-date-picker
-            v-model="checkIn"
+            v-model="checkOut"
             type="date"
             placeholder="Alege data"
           >
           </el-date-picker>
         </div>
-      </div>
-      <div class="bookingbarTitle">
-        <div>Check out</div>
-        <el-date-picker v-model="checkOut" type="date" placeholder="Alege data">
-        </el-date-picker>
-      </div>
-      <div class="bookingbarTitle">
-        Adults
-        <el-input-number v-model="adults" :min="1" :max="10"></el-input-number>
-      </div>
-      <div class="bookingbarTitle">
-        Children
-        <el-input-number
-          v-model="children"
-          :min="1"
-          :max="10"
-        ></el-input-number>
-      </div>
-      <div class="">
-        <nuxt-link to="/Book">
-          <el-button  type="warning" size="large" class="mt-5">Book now</el-button>
-        </nuxt-link>
-      </div>
-    </div>
-
-    <!-- about section -->
-    <div style="height: 100vh; margin-top: 5vh">
-      <div class="text-4xl text-center">Despre Pensiunea Teleptean</div>
-      <div class="text-xl flex justify-center mt-5">
-        <div class="" style="width: 60vw">
-          Alege din opțiunile noastre de cazare, în funcție de nevoile tale și
-          de numărul de persoane. Deschide galeria pentru a vizualiza
-          fotografiile cu camerele noastre disponibile.
-        </div>
-      </div>
-      <div class="flex justify-center mt-5">
-        <div class="flex" style="width: 80vw">
-          <div class="flex-1">
-            <RoomCard
-              link="15"
-              roomName="Apartament"
-              button="Vezi"
-              title="Apartament"
-              image="https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00781_ff602c0994.jpg"
-              details="Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit. Începeți dimineața într-un cadru elegant cu micul dejun gratuit care include fructe proaspete, iaurt, produse de patiserie și multe altele."
-            ></RoomCard>
-          </div>
-          <div class="flex row flex-1 ml-2">
-            <div class="mr-2">
-              <RoomCard
-                link="17"
-                :hideOverlay="true"
-                image="https://hotelstil.ro/wp-content/uploads/2022/04/BW-10-3.png"
-                roomName="camera3"
-                button="Vezi"
-                title="Camera Standard Pat Dublu"
-              ></RoomCard>
-            </div>
+        <div class="flex flex-row">
+          <div class="bookingbarTitle mr-2">
+            <div>Adulti</div>
             <div>
-              <RoomCard
-                link="16"
-                :hideOverlay="true"
-                image="https://hotelstil.ro/wp-content/uploads/2022/04/BW-10-3.png"
-                roomName="camera3"
-                button="Vezi"
-                title="Camera Standard Pat Simplu"
-              ></RoomCard>
+              <el-input-number
+                v-model="adults"
+                :min="1"
+                :max="10"
+              ></el-input-number>
+            </div>
+          </div>
+          <div class="bookingbarTitle">
+            <div>Copii</div>
+            <div>
+              <el-input-number
+                v-model="children"
+                :min="1"
+                :max="10"
+              ></el-input-number>
             </div>
           </div>
         </div>
+        <div class="">
+          <nuxt-link to="/Book">
+            <el-button
+              :style="$device.isMobile ? 'width:50vw' : ''"
+              type="warning"
+              size="large"
+              class="mt-5"
+              >Rezerva acum</el-button
+            >
+          </nuxt-link>
+        </div>
       </div>
-      <!-- <div class="flex justify-center">
-          <div class="flex" style="width: 80vw">
-            <div class="flex-1">
-              <img
-                src="https://hotelstil.ro/wp-content/uploads/2022/04/BW-2-10.png"
-                alt=""
-              />
-            </div>
-            <div class="flex-1">
-              <img
-                src="https://hotelstil.ro/wp-content/uploads/2022/04/BW-2-10.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div> -->
     </div>
-
-    <Facilities></Facilities>
-    <Spa></Spa>
-    <BeHappy></BeHappy>
+    <About style="margin-top: 100px"> </About>
+    <Facilities style="margin-top: 100px; margin-bottom: 100px"></Facilities>
+    <Spa v-if="$device.isDesktop"></Spa>
+    <BeHappy class="my-5"></BeHappy>
     <ContactForm></ContactForm>
   </div>
 </template>
@@ -135,12 +111,15 @@ const checkIn = ref("");
 const checkOut = ref("");
 const adults = ref(2);
 const children = ref(0);
+const coverTitle =
+  "Rezervă-ți vacanța la Pensiunea Teleptean chiar in inima Maramuresului.";
+const coverDescription =
+  " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României. Îmbinând tradiția cu confortul modern, te invităm să te bucuri de o experiență de neuitat într-un peisaj idilic, cu dealuri verzi și sate pitorești.";
+const coverDescriptionMobile =
+  " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României.";
 </script>
 
 <style scoped>
-.parent {
-  position: relative;
-}
 .bookingbar {
   position: absolute;
   top: 85vh;
@@ -150,7 +129,10 @@ const children = ref(0);
   z-index: 5;
   border-radius: 10px;
 }
+
 .bookingbarTitle {
+  width: 100%;
+  margin-bottom: 10px;
   font-family: Lato;
   font-size: 18px;
   font-weight: 700;
@@ -165,33 +147,67 @@ const children = ref(0);
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 90vh; /* Full height (cover the whole page) */
-  top: 10vh;
   left: 0;
   right: 0;
+  top: 0;
   display: block;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
-#overlaytext {
-  position: absolute; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 60%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 35vh;
-  left: 20vw;
-  right: 0;
-  display: block;
-  bottom: 0;
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer;
-  text-align: center;
-  color: #ffffff;
-  font-family: "Poppins", Sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
+@media only screen and (min-width: 600px) {
+  #overlaytext {
+    position: absolute; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 60%; /* Full width (cover the whole page) */
+    height: 100vh; /* Full height (cover the whole page) */
+    top: 20vh;
+    left: 20vw;
+    right: 0;
+    display: block;
+    bottom: 0;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Poppins", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+  #overlaytext .title {
+    font-size: 4vh;
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #overlaytext {
+    position: absolute; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100vw; /* Full width (cover the whole page) */
+    height: 20vh; /* Full height (cover the whole page) */
+    top: 20vh;
+    right: 0;
+    display: block;
+    bottom: 0;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Poppins", Sans-serif;
+    font-size: 10px;
+    line-height: 28px;
+  }
+  #overlaytext .title {
+    font-size: 3vh;
+  }
+
+  #overlaytext .description {
+    font-size: 2vh;
+  }
+  #overlaytext .description2 {
+    font-size: 2vh;
+  }
 }
 </style>

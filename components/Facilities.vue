@@ -1,5 +1,5 @@
 <template>
-  <div class="flex row parent" style="height: 80vh">
+  <div class="flex row parent">
     <div class="flex-1">
       <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
       <div class="text-center my-5 px-3">
@@ -39,7 +39,7 @@
         </ul>
       </div>
     </div>
-    <div class="flex-1">
+    <div v-if="!$device.isMobile" class="flex-1">
       <div class="">
         <img
           class="shadow"

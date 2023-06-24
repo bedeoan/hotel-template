@@ -1,13 +1,21 @@
 <template>
   <div>
-    <div v-if="oneImageUrl === undefined" style="width: 80vw" class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <div v-for="(image, index) in images" :key="image.id">
+    <div
+      v-if="oneImageUrl === undefined"
+      style="width: 80vw"
+      class="grid grid-cols-2 md:grid-cols-3 gap-4"
+    >
+      <div
+        class="img-hover-zoom"
+        v-for="(image, index) in images"
+        :key="image.id"
+      >
         <img
           @click="
             () => {
               dialogVisible = true;
               carousel.setActiveItem(index);
-              i = index
+              i = index;
             }
           "
           class="h-auto max-w-full rounded-lg"
@@ -16,19 +24,19 @@
         />
       </div>
     </div>
-    <div v-else>
+    <div class="img-hover-zoom" v-else>
       <img
-          @click="
-            () => {
-              dialogVisible = true;
-              carousel.setActiveItem(oneImageIndex);
-              i = oneImageIndex
-            }
-          "
-          class="h-auto max-w-full rounded-lg"
-          style="width:200px;"
-          :src="oneImageUrl"
-        />
+        @click="
+          () => {
+            dialogVisible = true;
+            carousel.setActiveItem(oneImageIndex);
+            i = oneImageIndex;
+          }
+        "
+        class="rounded-lg"
+        :style="$device.isDesktop ? 'width:50vw' : 'width:98vw'"
+        :src="oneImageUrl"
+      />
     </div>
     <client-only>
       <el-dialog
@@ -43,21 +51,28 @@
               >Inapoi</el-button
             >
           </div>
-          <div class="flex-1 items-center justify-center flex row">
+          <div class="ml-2 items-center justify-center flex">
             <div class="mr-5 text-xl">
               {{ config.public.HOTEL_NAME }}
             </div>
-            <BookButton label="Rezervari acum"></BookButton>
+            <BookButton
+              v-if="$device.isDeskop"
+              label="Rezervari acum"
+            ></BookButton>
           </div>
           <div class="flex-1 text-right pr-5"></div>
         </div>
-        <div class="flex flex-row">
+        <div v-if="$device.isDesktop" class="flex flex-row">
           <div class="flex">
             <el-button
               link
-              :disabled="i == images.length == 0"
+              :disabled="(i == images.length) == 0"
               :icon="ArrowLeft"
-              style="height: 80vh;font-size:10vh"
+              :style="
+                $device.isDesktop
+                  ? 'height: 80vh; font-size: 10vh'
+                  : 'height: 20vh; font-size: 5vh'
+              "
               @click="setActiveItem(-1)"
             ></el-button>
           </div>
@@ -69,26 +84,49 @@
               arrow="never"
             >
               <el-carousel-item
-                style="height: 80vh"
+                :style="$device.isDesktop ? 'height: 80vh' : 'width:500px'"
                 v-for="(image, j) in images"
                 :key="image"
                 :name="j"
               >
                 <div class="flex justify-center">
-                  <img style="height: 90vh" :src="image.url" alt="" />
+                  <img
+                    :style="$device.isDesktop ? 'height: 80vh' : 'width:700px'"
+                    :src="image.url"
+                    alt=""
+                  />
                 </div>
               </el-carousel-item>
             </el-carousel>
           </div>
           <div class="flex">
             <el-button
-              :disabled="i == images.length-1"
+              :disabled="i == images.length - 1"
               link
               :icon="ArrowRight"
-              style="height: 80vh;font-size:10vh"
+              :style="
+                $device.isDesktop
+                  ? 'height: 80vh; font-size: 10vh'
+                  : 'height: 20vh; font-size: 5vh'
+              "
               @click="setActiveItem(1)"
             ></el-button>
           </div>
+        </div>
+        <div v-else>
+          <el-carousel indicator-position="outside" height="150px">
+            <el-carousel-item v-for="(image, j) in images" :key="j">
+              <img
+                :style="$device.isDesktop ? 'height: 80vh' : 'width:700px'"
+                :src="image.url"
+                alt=""
+              />
+            </el-carousel-item>
+          </el-carousel>
+          <BookButton
+            v-if="$device.isMobile"
+            label="Rezervari acum"
+          ></BookButton>
         </div>
       </el-dialog>
     </client-only>
@@ -100,7 +138,7 @@ const config = useRuntimeConfig();
 const dialogVisible = ref(false);
 const props = defineProps({
   images: Array,
-  oneImageUrl: String
+  oneImageUrl: String,
 });
 const i = ref(0);
 const carousel = ref(null);

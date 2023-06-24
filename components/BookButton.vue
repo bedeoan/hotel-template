@@ -13,7 +13,7 @@
       <span v-if="label">{{ label }}</span>
       <span v-else>rezerva</span>
     </el-button>
-    <el-dialog width="20%" :modal="true" v-model="dialogVisible">
+    <el-dialog :width="$device.isDesktop ? '20%' : '80%'" :modal="true" v-model="dialogVisible">
       <div class="flex justify-center">
         <div>
           <div class="text-2xl mb-2">Pentru rezervari</div>

@@ -6,7 +6,7 @@
         class="coverimg"
         :src="room.profile_image.url"
       />
-      <div id="overlay"></div>
+   
       <div class="text-white text-5xl" id="overlaytext">
         {{ room.name }}
       </div>

@@ -114,13 +114,16 @@ poza room sa fie frumoasa.- daca da click sa il duca la prezentare room.
 [x] clickable image pe camera sa deschida preview de poza !!!
 
 
-[ ] zoom in hover on all rom images
+[ .] zoom in hover on all rom images
     - exmeplu izolat
     -aplly
 [ ] poze dinamice some interaction man !!
 
-[ ] Mobile optimization. text all
+### Mobile optimization. test all
+    -navbar
 
+
+[ ] elimina dependintele de la toatte pozele sa fie la tine pe aws !!
 ## FInal touch
 [ ] button de select date sa fie in pagina de book.
 [ ] font family please
@@ -131,10 +134,11 @@ poze corecte si alese frumos
 contect corect text scris frumos...
 vezi poza cu doamnna
 asociaza poze pe camere corect -task vera luni !!!
-
+ce informatii trebuiesc afisate - gen 13 camere??
 
 ## code
 [ ] fa un import general pentu icons si altele si acol pui tot si il folosesti
+[ ] all components should be mobile and desktop separat, only simple stuff do with breakpoints
 ---
 cum faci functionle generale gen cu boot???
 
@@ -171,3 +175,5 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 
 ## dificulati intampinate
 -un simplu trigger move to next in carousel
+-dificultate mare doar sa afisez un anumit tab pe carousel si erori random !!!
+-element ui nu randeaza pe mobil !!! diaogul
