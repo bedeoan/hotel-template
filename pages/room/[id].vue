@@ -11,6 +11,10 @@
         {{ room.name }}
       </div>
     </div>
+    <div
+      :style="$device.isMobile ? 'height:60vh' : 'height:60vh'"
+      id="overlay"
+    ></div>
     <div class="flex justify-center">
       <div style="width: 80vw">
         <div class="my-5">
@@ -81,12 +85,12 @@ const { data: room } = await useFetch(
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
   top: 35vh;
   right: 0;
   display: block;
   bottom: 0;
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
   text-align: center;
   color: #ffffff;
@@ -94,7 +98,7 @@ const { data: room } = await useFetch(
 }
 .coverimg {
   width: 100vw;
-  height: 700px;
+  height: 50vh;
   object-fit: cover;
 }
 </style>

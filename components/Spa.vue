@@ -16,7 +16,7 @@
       </div>
       <div class="overlay2">
         <img
-          src="https://www.picomartravel.ro/cache/e/6/6/e/1/e66e1c25dc03280cd556b171c88215e7585152fa.jpeg"
+          src="https://teleptean.s3.eu-west-3.amazonaws.com/Group_1_8_400b75a02c.png"
           style="border-radius: 20px"
         />
       </div>

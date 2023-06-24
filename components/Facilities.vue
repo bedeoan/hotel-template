@@ -3,10 +3,7 @@
     <div class="flex-1">
       <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
       <div class="text-center my-5 px-3">
-        Modernly equipped fitness room for all types of exercise. The gym has
-        modern equipment including treadmills, bikes, steppers, weights, etc.
-        The Pensiunea Teleptean fitness room has space for all types of
-        workouts:
+        Tratamentul balneoclimateric este esențial pentru întreținerea sănătății. Oferim diverse terapii precum sauna umedă, ideală pentru detoxifiere și relaxare. Sauna uscată stimulează circulația, ameliorând durerile musculare. Salina purifică sistemul respirator, iar masajul relaxează musculatura și alină stresul.
       </div>
       <div class="flex flex-center facilitylist">
         <ul class="text-2xl">
