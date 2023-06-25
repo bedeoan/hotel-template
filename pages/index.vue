@@ -157,10 +157,10 @@ const coverDescriptionMobile =
   #overlaytext {
     position: absolute; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 90; /* Full width (cover the whole page) */
+    width: 90%; /* Full width (cover the whole page) */
     height: 100vh; /* Full height (cover the whole page) */
     top: 20vh;
-    left: 20vw;
+    left: 5vw;
     right: 0;
     display: block;
     bottom: 0;

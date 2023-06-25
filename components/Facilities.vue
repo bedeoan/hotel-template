@@ -10,7 +10,7 @@
         relaxează musculatura și alină stresul.
       </div>
       <div class="flex flex-center facilitylist">
-        <ul class="text-2xl">
+        <ul class="text-xl">
           <li class="mt-2">
             <el-icon color="orange"><CircleCheck /></el-icon>
             Tratament Balneoclimateric

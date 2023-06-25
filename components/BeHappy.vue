@@ -43,6 +43,22 @@
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
+@media only screen and (min-width: 600px) {
+  .overlayMobile {
+  position: absolute; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 50vh; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.861); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+}
 .overlaytext {
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */

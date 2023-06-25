@@ -1,9 +1,9 @@
 <template>
   <div>
     <div style="margin-top: 5vh">
-      <div class="text-4xl text-center">Despre Pensiunea Teleptean</div>
-      <div class="text-xl flex justify-center mt-5">
-        <div :class="$device.isDesktop ? 'details' : 'details text-md'">
+      <div class="text-2xl text-center">Despre Pensiunea Teleptean</div>
+      <div class=" flex justify-center mt-5">
+        <div class="details">
           Alege din opțiunile noastre de cazare, în funcție de nevoile tale și
           de numărul de persoane. Deschide galeria pentru a vizualiza
           fotografiile cu camerele noastre disponibile.
@@ -107,7 +107,7 @@
 @media only screen and (max-width: 600px) {
   .details {
     width: 100vw;
-    font-size: 16x;
+    font-size: 8x;
     padding: 10px;
   }
 }

@@ -41,6 +41,7 @@ place zonele
 tailwind  - syntatx
 element ui - syntax
 -cum faci incadrare la o poza cu tailwind din cap ?
+-tailwind nu e responsive pe mobile in anumite situatii ? care ?
 
 ### ce nu e clar
 -daca vreau button mare
