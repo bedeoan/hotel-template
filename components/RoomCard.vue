@@ -6,7 +6,7 @@
           :src="image"
         />
         <div v-if="!hideOverlay" class="overlay">
-          <div class="text-white text-2xl px-5 ml-2" style="margin-top:10%">
+          <div class="text-white text-2xl px-5 ml-2" style="margin-top: 2vh">
             {{ title }}
           </div>
           <div class="text-white text-sm px-5 mx-2 mt-2 my-5">
