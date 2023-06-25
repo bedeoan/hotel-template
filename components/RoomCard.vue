@@ -9,7 +9,7 @@
           <div class="text-white text-2xl px-5 ml-2" style="margin-top:15%">
             {{ title }}
           </div>
-          <div class="text-white px-5 mx-2 mt-2 my-5">
+          <div class="text-white text-sm px-5 mx-2 mt-2 my-5">
             {{ details }}
           </div>
           <div class="ml-2 px-5 mt-2">
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div v-else  class="overlay2">
-          <div class="text-white text-xl ml-2" style="margin-top:90%">
+          <div class="text-white text-xl ml-2" style="margin-top:80%">
             {{ title }}
           </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <div :class="$device.isMobile ? '' : 'flex'" style="margin-top: 50px; margin-bottom: 50px">
     <div class="flex-1 flex justify-center mt-5">
-      <div :style="$device.isMobile ? 'width: 96%': 'width:300px'">
+      <div :style="$device.isMobile ? 'width: 96%;margin-left:2vw': 'width:300px'">
         <div>
           <div class="text-2xl mb-5">Contacteaza-ne</div>
         </div>

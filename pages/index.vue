@@ -5,7 +5,7 @@
       :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
       id="overlay"
     ></div>
-    <div id="overlaytext">
+    <div id="overlaytext" class="px-2">
       <div class="title leading-10 text-white mb-5">
         {{ coverTitle }}
       </div>
@@ -13,22 +13,19 @@
         <div v-if="!$device.isMobile">
           {{ coverDescription }}
         </div>
-        <!-- <span v-else>
-        {{ coverDescriptionMobile }}
-       </span> -->
       </div>
       <div class="text-white text-center description2 mt-8">
         Tratament balneoclimateric, Conditii moderne, Obiective turistice usor
         accesibile
       </div>
-      <div v-if="$device.isMobile" class="flex" style="margin-top:10px;">
+      <div v-if="$device.isMobile" class="flex" >
         <img
-          class="w-1/2"
+          class="w-1/2 rounded-lg mr-1 ml-1"
           src="https://www.teleptean.ro/articleimages/noutati/despre-noi-04.jpg"
           alt=""
         />
         <img
-            class="w-1/2"
+            class="w-1/3 rounded-lg"
             src="https://www.teleptean.ro/images/pool/piscinaa.jpg"
             alt=""
           />
@@ -146,7 +143,7 @@ const coverDescriptionMobile =
 #overlay {
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
+  width: 100vw; /* Full width (cover the whole page) */
   left: 0;
   right: 0;
   top: 0;
@@ -160,7 +157,7 @@ const coverDescriptionMobile =
   #overlaytext {
     position: absolute; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 60%; /* Full width (cover the whole page) */
+    width: 90; /* Full width (cover the whole page) */
     height: 100vh; /* Full height (cover the whole page) */
     top: 20vh;
     left: 20vw;

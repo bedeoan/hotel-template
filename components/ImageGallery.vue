@@ -84,7 +84,7 @@
               arrow="never"
             >
               <el-carousel-item
-                :style="$device.isDesktop ? 'height: 80vh' : 'width:500px'"
+                :style="$device.isDesktop ? 'height: 80vh' : ''"
                 v-for="(image, j) in images"
                 :key="image"
                 :name="j"
@@ -114,10 +114,10 @@
           </div>
         </div>
         <div v-else>
-          <el-carousel indicator-position="outside" height="150px">
+          <el-carousel indicator-position="outside" height="250px">
             <el-carousel-item v-for="(image, j) in images" :key="j">
               <img
-                :style="$device.isDesktop ? 'height: 80vh' : 'width:700px'"
+                style="height: auto"
                 :src="image.url"
                 alt=""
               />

@@ -15,7 +15,9 @@
           având încrederea că ne ocupăm de tot ce ține de confortul
           dumneavoastră. Dacă aveți întrebări pentru noi:
         </div>
-        <BookButton label="Contacteaza-ne"></BookButton>
+        <nuxt-link to="/contact">
+          <el-button type="primary">Contacteaza-ne</el-button>
+        </nuxt-link>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@
     <div style="margin-top: 5vh">
       <div class="text-4xl text-center">Despre Pensiunea Teleptean</div>
       <div class="text-xl flex justify-center mt-5">
-        <div class="details" style="">
+        <div :class="$device.isDesktop ? 'details' : 'details text-md'">
           Alege din opțiunile noastre de cazare, în funcție de nevoile tale și
           de numărul de persoane. Deschide galeria pentru a vizualiza
           fotografiile cu camerele noastre disponibile.

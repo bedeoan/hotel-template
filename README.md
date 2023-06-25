@@ -177,3 +177,9 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 -un simplu trigger move to next in carousel
 -dificultate mare doar sa afisez un anumit tab pe carousel si erori random !!!
 -element ui nu randeaza pe mobil !!! diaogul
+
+
+
+#### Responsivenes ramasa
+
+-

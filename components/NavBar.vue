@@ -1,17 +1,17 @@
 <template>
   <div>
     <header class="bg-blue-500 w-full text-white shadow-lg navbar">
-      <div class="container mx-auto flex flex-wrap justify-between p-5">
-        <nuxt-link to="/">
-          <div class="flex">
-            <div class="mr-5">
-              <img style="width: 50px" src="/logo.png" />
+      <div class="container mx-auto flex justify-between p-5">
+        <div class="">
+          <nuxt-link :class="$device.isMobile ? 'flex row': 'flex'" to="/">
+            <div class="mr-2">
+              <img :style="$device.isMobile ? 'width: 5vw' : 'width:3vw;'" src="/logo.png" />
             </div>
-            <a href="#" class="text-2xl font-bold"
-              >Pensiunea Teleptean</a
-            >
-          </div>
-        </nuxt-link>
+            <div>
+              Pensiunea Teleptean
+            </div>
+          </nuxt-link>
+        </div>
         <nav class="hidden sm:flex space-x-4">
           <ul class="flex">
             <li class="sm:mr-5 pt-1">
@@ -31,7 +31,9 @@
                       v-for="room in roomsWithPrice"
                       :key="room.id"
                     >
-                      <nuxt-link :to="{ name: 'room-id', params: {id: room.id}}">
+                      <nuxt-link
+                        :to="{ name: 'room-id', params: { id: room.id } }"
+                      >
                         {{ room.name }}
                       </nuxt-link>
                     </el-dropdown-item>
@@ -57,58 +59,56 @@
             </li>
           </ul>
         </nav>
-        <div class="sm:hidden">
+        <div class="sm:hidden w-1/4 flex justify-center ">
           <button @click="isOpen = !isOpen">
             <span>☰</span>
           </button>
         </div>
-        <div
-          v-if="isOpen"
-          class="sm:hidden w-full flex justify-between meniuMobile"
-        >
-          <nav class="mt-3 flex justify-center w-full">
-            <ul class="text-center w-1/2">
-              <li class="sm:mr-5 my-3 mt-5">
-                <nuxt-link class="hover:underline" to="/"> Acasa </nuxt-link>
-              </li>
-              <li class="sm:mr-5 my-3">
-                <nuxt-link class="hover:underline" to="/Gallery">
-                  Galerie Foto
-                </nuxt-link>
-              </li>
-              <li class="sm:mr-5 my-3">
-                <el-dropdown>
-                  <el-button
-                    class="border-transparent  rooms"
-                    color="bg-blue-500"
-                  >
-                    <span class="text-lg">
-                      Camere
-                    </span>
-                  </el-button>
-                  <template #dropdown>
-                    <el-dropdown-menu>
-                      <el-dropdown-item
-                        v-for="room in roomsWithPrice"
-                        :key="room.id"
-                      >
-                        <nuxt-link exact :to="`room/${room.id}`">
-                          {{ room.name }}
-                        </nuxt-link>
-                      </el-dropdown-item>
-                    </el-dropdown-menu>
-                  </template>
-                </el-dropdown>
-              </li>
+      </div>
+      <div
+        v-if="isOpen"
+        class="sm:hidden w-full flex justify-between meniuMobile"
+      >
+        <nav class="py-1 flex justify-center w-full">
+          <ul class="text-center w-1/2">
+            <li class="sm:mr-5 my-3 mt-5">
+              <nuxt-link class="hover:underline" to="/"> Acasa </nuxt-link>
+            </li>
+            <li class="sm:mr-5 my-3">
+              <nuxt-link class="hover:underline" to="/Gallery">
+                Galerie Foto
+              </nuxt-link>
+            </li>
+            <li class="sm:mr-5 my-3">
+              <el-dropdown>
+                <el-button
+                  class="border-transparent rooms"
+                  color="bg-blue-500"
+                >
+                  <span class="text-lg"> Camere </span>
+                </el-button>
+                <template #dropdown>
+                  <el-dropdown-menu>
+                    <el-dropdown-item
+                      v-for="room in roomsWithPrice"
+                      :key="room.id"
+                    >
+                      <nuxt-link exact :to="`room/${room.id}`">
+                        {{ room.name }}
+                      </nuxt-link>
+                    </el-dropdown-item>
+                  </el-dropdown-menu>
+                </template>
+              </el-dropdown>
+            </li>
 
-              <li class="sm:mr-5 my-3">
-                <nuxt-link class="hover:underline" to="/contact">
-                  Contact
-                </nuxt-link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+            <li class="sm:mr-5 my-3">
+              <nuxt-link class="hover:underline" to="/contact">
+                Contact
+              </nuxt-link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   </div>
@@ -124,21 +124,25 @@ const { data: rooms } = await useFetch(
 const roomsWithPrice = computed(() =>
   rooms.value ? rooms.value.filter((x) => x.price) : []
 );
-const route = useRoute()
+const route = useRoute();
 
-watch(route,value => {
-  isOpen.value = false
-}, {deep: true, immediate: true})
+watch(
+  route,
+  (value) => {
+    isOpen.value = false;
+  },
+  { deep: true, immediate: true }
+);
 </script>
 
 <style scoped>
 .navbar {
   position: absolute;
   min-height: 10vh;
-  z-index: 5;
+  z-index: 30;
 }
 .meniuMobile {
-  z-index: 10;
+  z-index: 50;
 }
 .rooms {
   border: none;

@@ -3,7 +3,11 @@
     <div class="flex-1">
       <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
       <div class="text-center my-5 px-3">
-        Tratamentul balneoclimateric este esențial pentru întreținerea sănătății. Oferim diverse terapii precum sauna umedă, ideală pentru detoxifiere și relaxare. Sauna uscată stimulează circulația, ameliorând durerile musculare. Salina purifică sistemul respirator, iar masajul relaxează musculatura și alină stresul.
+        Tratamentul balneoclimateric este esențial pentru întreținerea
+        sănătății. Oferim diverse terapii precum sauna umedă, ideală pentru
+        detoxifiere și relaxare. Sauna uscată stimulează circulația, ameliorând
+        durerile musculare. Salina purifică sistemul respirator, iar masajul
+        relaxează musculatura și alină stresul.
       </div>
       <div class="flex flex-center facilitylist">
         <ul class="text-2xl">
@@ -17,7 +21,7 @@
           </li>
           <li class="mt-2">
             <el-icon color="orange"><CircleCheck /></el-icon>
-            Saunna uscata
+            Sauna uscata
           </li>
           <li class="mt-2">
             <el-icon color="orange"><CircleCheck /></el-icon>
@@ -31,7 +35,9 @@
             <!-- <el-button size="large" type="primary">
               <el-icon class="mr-2"><InfoFilled /></el-icon>
             </el-button> -->
-            <BookButton  label="Mai multe informatii"></BookButton>
+            <nuxt-link to="/contact">
+              <el-button type="primary">Mai multe informatii</el-button>
+            </nuxt-link>
           </li>
         </ul>
       </div>

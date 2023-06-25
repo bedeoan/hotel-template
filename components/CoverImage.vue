@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex images">
+    <div class="flex images" :style="$device.isMobile ? 'height:60vh' : 'height:90vh'">
       <img
         :style="$device.isMobile ? 'height:50vh' : 'height:90vh'"
         src="https://aventurescu.ro/wp-content/uploads/2016/07/ecomaramures2.jpg"
