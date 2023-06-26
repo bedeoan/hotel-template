@@ -13,6 +13,9 @@
       <span v-if="label">{{ label }}</span>
       <span v-else>rezerva</span>
     </el-button>
+    <client-only>
+
+    
     <el-dialog :width="$device.isDesktop ? '20%' : '80%'" :modal="true" v-model="dialogVisible">
       <div class="flex justify-center">
         <div>
@@ -33,6 +36,7 @@
         </div>
       </div>
     </el-dialog>
+  </client-only>
   </div>
 </template>
 
