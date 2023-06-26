@@ -28,15 +28,6 @@
                   {{ config.public.CONTACT_PHONE1 }}</el-button
                 >
               </div>
-              <div>
-                <el-button
-                  link
-                  @click="callClient(config.public.CONTACT_PHONE2)"
-                >
-                  <el-icon class="mr-2" size="large"><Phone /></el-icon>
-                  {{ config.public.CONTACT_PHONE2 }}</el-button
-                >
-              </div>
             </div>
           </div>
         </div>
