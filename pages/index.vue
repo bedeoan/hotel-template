@@ -21,12 +21,12 @@
       <div v-if="$device.isMobile" class="flex" >
         <img
           class="w-1/2 rounded-lg mr-1 ml-1"
-          src="https://www.teleptean.ro/articleimages/noutati/despre-noi-04.jpg"
+          src="https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg"
           alt=""
         />
         <img
-            class="w-1/3 rounded-lg"
-            src="https://www.teleptean.ro/images/pool/piscinaa.jpg"
+            class="w-1/2 rounded-lg"
+            src="https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png"
             alt=""
           />
       </div>

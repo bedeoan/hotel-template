@@ -27,21 +27,21 @@
                 >{{ config.public.CONTACT_PHONE1 }}</el-button
               >
             </div>
-            <div>
+            <!-- <div>
               <el-button
                 link
                 @click="callClient(config.public.CONTACT_PHONE2)"
                 >{{ config.public.CONTACT_PHONE2 }}</el-button
               >
-            </div>
+            </div> -->
           </div>
 
           <div class="text-2xl mt-5">
             <el-icon size="large"><Message /></el-icon>
             Email Address
           </div>
-          <div class="ml-3">office@teleptean.ro</div>
-          <div>
+          <div class="ml-3">teleptean.ghe@gmail.com</div>
+          <!-- <div>
             <el-button
               size="large"
               class="mt-5"
@@ -51,7 +51,7 @@
               <el-icon class="mr-2" size="large"><Phone /></el-icon>
               Contact
             </el-button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
