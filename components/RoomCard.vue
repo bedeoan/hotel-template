@@ -16,8 +16,8 @@
             <el-button type="warning">{{ button }}</el-button>
           </div>
         </div>
-        <div v-else  class="overlay2">
-          <div class="text-white text-xl ml-2" style="margin-top:85%">
+        <div v-else class="overlay2">
+          <div class="text-white text-xl ml-2" style="margin-top:60%">
             {{ title }}
           </div>
         </div>

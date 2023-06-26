@@ -178,8 +178,6 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 
 #### Responsivenes ramasa
 
-
-
 #### Ce este nevoie sa fac conversie
 
 -dns schimbat
@@ -191,8 +189,6 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 -o campanie basic, google (1.000 lei)
 -500 lei la raul...
 
-
-
 ## Intrebari 
 - ce poze pun ??
 -cum imi dau seama ca rezevarea a venit din site ? sau ca site-ul meu este bun..??
@@ -200,3 +196,43 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 
 
 https://apisite.teleptean.facturi.erpx.ro/admin/auth/login
+
+
+
+### discutie client - 26 iunie
+
+2 intrebari 
+
+-ce schimb ca sa pot da drumul azi ??
+
+-apartament
+-camera dublu 
+
+—
+
+ce optiuni vrei sa scri ???
+
+-fara minibar si
+ caldura control ??
+
+-fara telefon
+
+——
+mic dejun gratuit, bogat variat 
+
+———
+
+
+poze canapea ????
+
+
+———
+apartament 500
+——
+Vara
+pret sezon vara - 500 aparatemnte
+dubla - 300 lei
+——
+iarna
+—-—
+

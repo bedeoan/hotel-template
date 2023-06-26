@@ -6,7 +6,7 @@
         class="coverimg"
         :src="room.profile_image.url"
       />
-   
+
       <div class="text-white text-5xl" id="overlaytext">
         {{ room.name }}
       </div>
@@ -20,16 +20,57 @@
         <div class="my-5">
           Camere confortabile și spațioase cu paturi king-size și toate
           facilitățile pe care v-ați aștepta de la Pensiunea Teleptean! Începeți
-          dimineața preferată cu micul dejun gratuit, care include fructe
-          proaspete, iaurt, produse de patiserie și altele.
+          dimineața preferată cu micul dejun gratuit bogat si variat.
         </div>
         <ul class="text-center my-5">
-          <li>Control individual al aerului conditionat și căldurii.</li>
-          <li>Televizor</li>
-          <li>LCD Mini-bar</li>
-          <li>Telefon cu apelare directă wireless</li>
-          <li>Camere pentru nefumători disponibile</li>
-          <li>Televiziune prin cablu</li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Parcare privată
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Spa și centru de wellness
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Piscina interioara si exterioara
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Televizor
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            WiFi gratuit inclus
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Camere pentru nefumători disponibile
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Mic dejun foarte bun
+          </li>
+          <li>
+            <el-icon>
+              <CircleCheck></CircleCheck>
+            </el-icon>
+            Bar
+          </li>
         </ul>
 
         <div class="my-5">
@@ -55,6 +96,7 @@
 </template>
 
 <script setup>
+import { CircleCheck } from "@element-plus/icons-vue";
 const route = useRoute();
 const link = route.params.id;
 const { data: room } = await useFetch(
