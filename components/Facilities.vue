@@ -47,12 +47,12 @@
         <img
           class="shadow"
           style="width: 35vw; margin-left: 100px; border-radius: 20px"
-          src="https://www.teleptean.ro/images/pool/piscinaa.jpg"
+          src="https://teleptean.s3.eu-west-3.amazonaws.com/small_big_pensiunea_teleptean_ocna_sugatag_qzd6458vg1am_278e0d6ad4.jpg"
         />
       </div>
       <div class="overlay">
         <img
-          src="https://www.teleptean.ro/images/pool/piscina.jpg"
+          src="https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png"
           style="width: 20vw; border-radius: 20px"
         />
       </div>

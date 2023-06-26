@@ -18,8 +18,17 @@ const config = useRuntimeConfig();
 const { data: rooms } = await useFetch(
   "https://apisite.teleptean.facturi.erpx.ro/rooms"
 );
+const sortByPrice = function(a,b ) {
+  if(a.price >b.price) {
+    return 1
+  }
+  if(a.price <b.price) {
+    return -1
+  }
+  return 0
+}
 const roomsWithPrice = computed(() =>
-  rooms.value ? rooms.value.filter((x) => x.price) : []
+  rooms.value ? rooms.value.filter((x) => x.price).sort(sortByPrice) : []
 );
 </script>
 

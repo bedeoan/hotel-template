@@ -38,7 +38,6 @@
         :src="oneImageUrl"
       />
     </div>
-    <client-only>
       <el-dialog
         :show-close="false"
         :modal="true"
@@ -73,7 +72,7 @@
                   ? 'height: 80vh; font-size: 10vh'
                   : 'height: 20vh; font-size: 5vh'
               "
-              @click="setActiveItem(-1)"
+              @click="setActiveItemForCarousel(-1)"
             ></el-button>
           </div>
           <div class="flex-1">
@@ -109,7 +108,7 @@
                   ? 'height: 80vh; font-size: 10vh'
                   : 'height: 20vh; font-size: 5vh'
               "
-              @click="setActiveItem(1)"
+              @click="setActiveItemForCarousel(1)"
             ></el-button>
           </div>
         </div>
@@ -129,7 +128,6 @@
           ></BookButton>
         </div>
       </el-dialog>
-    </client-only>
   </div>
 </template>
 <script setup>
@@ -142,7 +140,7 @@ const props = defineProps({
 });
 const i = ref(0);
 const carousel = ref(null);
-const setActiveItem = (index) => {
+const setActiveItemForCarousel = (index) => {
   i.value = i.value + index;
   carousel.value.setActiveItem(i.value);
 };

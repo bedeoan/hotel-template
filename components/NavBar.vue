@@ -92,8 +92,9 @@
                     <el-dropdown-item
                       v-for="room in roomsWithPrice"
                       :key="room.id"
+                      style="margin-bottom:10px"
                     >
-                      <nuxt-link exact :to="`room/${room.id}`">
+                      <nuxt-link exact :to="{ name: 'room-id', params: { id: room.id } }">
                         {{ room.name }}
                       </nuxt-link>
                     </el-dropdown-item>
