@@ -5,6 +5,7 @@
       :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
       id="overlay"
     ></div>
+
     <div id="overlaytext" class="px-2">
       <div class="title leading-10 text-white mb-5">
         {{ coverTitle }}
@@ -18,17 +19,25 @@
         Tratament balneoclimateric, Conditii moderne, Obiective turistice usor
         accesibile
       </div>
-      <div v-if="$device.isMobile" class="flex" >
-        <img
-          class="w-1/2 rounded-lg mr-1 ml-1"
-          src="https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg"
-          alt=""
-        />
-        <img
-            class="w-1/2 rounded-lg"
-            src="https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png"
-            alt=""
-          />
+
+      <div v-if="$device.isMobile" class="flex">
+        <TransitionGroup
+          tag="ul"
+          :css="false"
+          @before-enter="onBeforeEnter"
+          @enter="onEnter"
+          class="flex"
+          @leave="onLeave"
+        >
+          <li
+            v-for="(item, index) in computedList"
+            :key="item.msg"
+            class="w-1/2 mr-1"
+            :data-index="index"
+          >
+            <img class="rounded-lg mr-1 ml-1" :src="item.link" alt="" />
+          </li>
+        </TransitionGroup>
       </div>
     </div>
     <!-- BookingBar -->
@@ -104,6 +113,61 @@
 </template>
 
 <script setup>
+import { ref, computed, onBeforeMount, onBeforeUnmount } from "vue";
+import gsap from "gsap";
+
+const positionTop = ref(0);
+const positiontLeft = ref(0);
+
+const list = [
+  {
+    msg: "foto1",
+    limit: 200,
+    link: "https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg",
+  },
+  {
+    msg: "foto2",
+    limit: 200,
+    link: "https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png",
+  },
+];
+
+const query = ref("");
+const scrollY = ref(0);
+const computedList = computed(() => {
+  return list.filter((item) => scrollY.value > 1);
+});
+const handleScroll = () => {
+  scrollY.value = window.scrollY;
+};
+onBeforeMount(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+function onBeforeEnter(el) {
+  el.style.opacity = 0;
+  el.style.height = 0;
+}
+
+function onEnter(el, done) {
+  gsap.to(el, {
+    opacity: 1,
+    height: "1.6em",
+    delay: el.dataset.index * 0.30,
+    onComplete: done,
+  });
+}
+
+function onLeave(el, done) {
+  gsap.to(el, {
+    opacity: 0,
+    height: 0,
+    delay: el.dataset.index * 0.15,
+    onComplete: done,
+  });
+}
 const checkIn = ref("");
 const checkOut = ref("");
 const adults = ref(2);

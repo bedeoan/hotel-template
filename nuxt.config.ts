@@ -12,6 +12,9 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
+  build: {
+    transpile: ['gsap'],
+  },
   runtimeConfig: {
     secret: process.env.SECRET,
     public: {

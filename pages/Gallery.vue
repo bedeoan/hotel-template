@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5">
     <div>
-      <el-tabs v-model="tab" type="border-card">
+      <el-tabs  v-model="tab" type="border-card">
         <el-tab-pane
           v-if="config.public.GALERY_0_NAME"
           :label="config.public.GALERY_0_NAME"
