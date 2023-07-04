@@ -13,9 +13,7 @@
         <img
           @click="
             () => {
-              dialogVisible = true;
-              carousel.setActiveItem(index);
-              i = index;
+              previewImage(index);
             }
           "
           class="h-auto max-w-full rounded-lg"
@@ -38,96 +36,89 @@
         :src="oneImageUrl"
       />
     </div>
-      <el-dialog
-        :show-close="false"
-        :modal="true"
-        fullscreen
-        v-model="dialogVisible"
-      >
-        <div class="flex row">
-          <div class="flex-1 mb-2">
-            <el-button :icon="Back" @click="dialogVisible = false"
-              >Inapoi</el-button
-            >
-          </div>
-          <div class="ml-2 items-center justify-center flex">
-            <div class="mr-5 text-xl">
-              {{ config.public.HOTEL_NAME }}
-            </div>
-            <BookButton
-              v-if="$device.isDeskop"
-              label="Rezervari acum"
-            ></BookButton>
-          </div>
-          <div class="flex-1 text-right pr-5"></div>
+    <el-dialog
+      :show-close="false"
+      :modal="true"
+      fullscreen
+      v-model="dialogVisible"
+    >
+      <div class="flex row">
+        <div class="flex-1 mb-2">
+          <el-button :icon="Back" @click="dialogVisible = false"
+            >Inapoi</el-button
+          >
         </div>
-        <div v-if="$device.isDesktop" class="flex flex-row">
-          <div class="flex">
-            <el-button
-              link
-              :disabled="(i == images.length) == 0"
-              :icon="ArrowLeft"
-              :style="
-                $device.isDesktop
-                  ? 'height: 80vh; font-size: 10vh'
-                  : 'height: 20vh; font-size: 5vh'
-              "
-              @click="setActiveItemForCarousel(-1)"
-            ></el-button>
+        <div class="ml-2 items-center justify-center flex">
+          <div class="mr-5 text-xl">
+            {{ config.public.HOTEL_NAME }}
           </div>
-          <div class="flex-1">
-            <el-carousel
-              ref="carousel"
-              :indicator-position="i"
-              height="auto"
-              arrow="never"
-            >
-              <el-carousel-item
-                :style="$device.isDesktop ? 'height: 80vh' : ''"
-                v-for="(image, j) in images"
-                :key="image"
-                :name="j"
-              >
-                <div class="flex justify-center">
-                  <img
-                    :style="$device.isDesktop ? 'height: 80vh' : 'width:700px'"
-                    :src="image.url"
-                    alt=""
-                  />
-                </div>
-              </el-carousel-item>
-            </el-carousel>
-          </div>
-          <div class="flex">
-            <el-button
-              :disabled="i == images.length - 1"
-              link
-              :icon="ArrowRight"
-              :style="
-                $device.isDesktop
-                  ? 'height: 80vh; font-size: 10vh'
-                  : 'height: 20vh; font-size: 5vh'
-              "
-              @click="setActiveItemForCarousel(1)"
-            ></el-button>
-          </div>
-        </div>
-        <div v-else>
-          <el-carousel indicator-position="outside" height="250px">
-            <el-carousel-item v-for="(image, j) in images" :key="j">
-              <img
-                style="height: auto"
-                :src="image.url"
-                alt=""
-              />
-            </el-carousel-item>
-          </el-carousel>
           <BookButton
-            v-if="$device.isMobile"
+            v-if="$device.isDeskop"
             label="Rezervari acum"
           ></BookButton>
         </div>
-      </el-dialog>
+        <div class="flex-1 text-right pr-5"></div>
+      </div>
+      <div v-if="$device.isDesktop" class="flex flex-row">
+        <div class="flex">
+          <el-button
+            link
+            :disabled="(i == images.length) == 0"
+            :icon="ArrowLeft"
+            :style="
+              $device.isDesktop
+                ? 'height: 80vh; font-size: 10vh'
+                : 'height: 20vh; font-size: 5vh'
+            "
+            @click="setActiveItemForCarousel(-1)"
+          ></el-button>
+        </div>
+        <div class="flex-1">
+          <el-carousel
+            ref="carousel"
+            :indicator-position="i"
+            height="auto"
+            arrow="never"
+          >
+            <el-carousel-item
+              :style="$device.isDesktop ? 'height: 80vh' : ''"
+              v-for="(image, j) in images"
+              :key="image"
+              :name="j"
+            >
+              <div class="flex justify-center">
+                <img
+                  :style="$device.isDesktop ? 'height: 80vh' : 'width:700px'"
+                  :src="image.url"
+                  alt=""
+                />
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+        <div class="flex">
+          <el-button
+            :disabled="i == images.length - 1"
+            link
+            :icon="ArrowRight"
+            :style="
+              $device.isDesktop
+                ? 'height: 80vh; font-size: 10vh'
+                : 'height: 20vh; font-size: 5vh'
+            "
+            @click="setActiveItemForCarousel(1)"
+          ></el-button>
+        </div>
+      </div>
+      <div v-else>
+        <el-carousel indicator-position="outside" height="250px">
+          <el-carousel-item v-for="(image, j) in images" :key="j">
+            <img style="height: auto" :src="image.url" alt="" />
+          </el-carousel-item>
+        </el-carousel>
+        <BookButton v-if="$device.isMobile" label="Rezervari acum"></BookButton>
+      </div>
+    </el-dialog>
   </div>
 </template>
 <script setup>
@@ -143,6 +134,13 @@ const carousel = ref(null);
 const setActiveItemForCarousel = (index) => {
   i.value = i.value + index;
   carousel.value.setActiveItem(i.value);
+};
+const previewImage = (index) => {
+  dialogVisible.value = true;
+  i.value = index;
+  setTimeout(() => {
+    carousel.value.setActiveItem(index);
+  }, 100)
 };
 </script>
 <style scoped>

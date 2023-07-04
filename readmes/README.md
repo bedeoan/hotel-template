@@ -71,3 +71,11 @@ https://apisite.teleptean.facturi.erpx.ro/admin/plugins/content-manager/collecti
 https://apisite.teleptean.facturi.erpx.ro/admin/auth/login
 
 ### discutie client - 26 iunie
+
+
+### whole day can be dediated to interactivity !!!!
+sectiunile de sub sa vina una sub alta - intelege ce vrei prima data
+sa faca jump gen la button de rezerva..
+
+-zoom in pe poze
+-cand dai click sa te trimita la galerie oriune dai click !!

@@ -41,7 +41,13 @@ basic text animation
 
 ## todo 9-10
 [ ] Basic text animation & small deffects!
-[ ] 
 [ ] margins and widths for all devices
 [ ] repair first click problem
 [ ] replace element ui, shity elements there
+
+
+### what have i learned , how am i better ?
+
+
+-------
+[ ] analyste from seo perspective !!!

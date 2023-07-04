@@ -5,6 +5,7 @@ export default defineNuxtConfig({
       '@element-plus/nuxt',
       '@nuxtjs/device'
   ],
+  
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {

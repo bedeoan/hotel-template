@@ -15,11 +15,10 @@
         </div>
       </div>
       <div class="text-white text-center description2 mt-8 fade-in-text-description">
-        Tratament balneoclimateric, Conditii moderne, Obiective turistice usor
-        accesibile
+        {{ coverDescription2 }}
       </div>
 
-      <div v-if="$device.isMobile" class="flex">
+      <div v-if="$device.isMobile" class="flex mt-2">
         <TransitionGroup
           tag="ul"
           :css="false"
@@ -29,7 +28,7 @@
           @leave="onLeave"
         >
           <li
-            v-for="(item, index) in computedList"
+            v-for="(item, index) in listOfCoverImages"
             :key="item.msg"
             class="w-1/2 mr-1"
             :data-index="index"
@@ -132,17 +131,14 @@ const list = [
 const query = ref("");
 const scrollY = ref(0);
 
-// const computedList = computed(() => {
-//   return list.filter((item) => scrollY.value > 1);
-// });
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
-const computedList = ref(null)
+const listOfCoverImages = ref(null)
 onMounted(() => {
   setTimeout(() => {
-    computedList.value = list
-  }, 2000)
+    listOfCoverImages.value = list
+  }, 1400)
 })
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
@@ -158,7 +154,8 @@ function onEnter(el, done) {
   gsap.to(el, {
     opacity: 1,
     height: "1.6em",
-    delay: el.dataset.index * 0.30,
+    duration: 1.5,
+    delay: el.dataset.index * 1,
     onComplete: done,
   });
 }
@@ -181,6 +178,8 @@ const coverDescription =
   " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României. Îmbinând tradiția cu confortul modern, te invităm să te bucuri de o experiență de neuitat într-un peisaj idilic, cu dealuri verzi și sate pitorești.";
 const coverDescriptionMobile =
   " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României.";
+  const coverDescription2 =
+  "Tratament balneoclimateric, Conditii moderne, Obiective turistice usor ,accesibile";
 </script>
 
 <style scoped>
