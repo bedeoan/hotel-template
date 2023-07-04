@@ -19,26 +19,9 @@
       </div>
 
       <div v-if="$device.isMobile" class="flex mt-2">
-        <TransitionGroup
-          tag="ul"
-          :css="false"
-          @before-enter="onBeforeEnter"
-          @enter="onEnter"
-          class="flex"
-          @leave="onLeave"
-        >
-          <li
-            v-for="(item, index) in listOfCoverImages"
-            :key="item.msg"
-            class="w-1/2 mr-1"
-            :data-index="index"
-          >
-            <img class="rounded-lg mr-1 ml-1" :src="item.link" alt="" />
-          </li>
-        </TransitionGroup>
+        <CoverImagesInCover />
       </div>
     </div>
-    <!-- BookingBar -->
     <div
       :class="
         $device.isMobile
@@ -102,7 +85,7 @@
         </div>
       </div>
     </div>
-    <About style="margin-top: 100px"> </About>
+    <About style="margin-top: 10vh;"> </About>
     <Facilities style="margin-top: 100px; margin-bottom: 100px"></Facilities>
     <Spa v-if="$device.isDesktop"></Spa>
     <BeHappy class="my-5"></BeHappy>
@@ -111,63 +94,22 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
-
 const positionTop = ref(0);
 const positiontLeft = ref(0);
 
-const list = [
-  {
-    msg: "foto1",
-    limit: 200,
-    link: "https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg",
-  },
-  {
-    msg: "foto2",
-    limit: 200,
-    link: "https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png",
-  },
-];
+
 const query = ref("");
 const scrollY = ref(0);
 
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
-const listOfCoverImages = ref(null)
-onMounted(() => {
-  setTimeout(() => {
-    listOfCoverImages.value = list
-  }, 1400)
-})
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
 });
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
 });
-function onBeforeEnter(el) {
-  el.style.opacity = 0;
-  el.style.height = 0;
-}
-function onEnter(el, done) {
-  gsap.to(el, {
-    opacity: 1,
-    height: "1.6em",
-    duration: 1.5,
-    delay: el.dataset.index * 1,
-    onComplete: done,
-  });
-}
-
-function onLeave(el, done) {
-  gsap.to(el, {
-    opacity: 0,
-    height: 0,
-    delay: el.dataset.index * 0.15,
-    onComplete: done,
-  });
-}
 const checkIn = ref("");
 const checkOut = ref("");
 const adults = ref(2);
@@ -183,45 +125,6 @@ const coverDescriptionMobile =
 </script>
 
 <style scoped>
-.fade-in-text {
-  animation: fadeIn 3s;
-  -webkit-animation: fadeIn 3s;
-  -moz-animation: fadeIn 3s;
-  -o-animation: fadeIn 3s;
-  -ms-animation: fadeIn 3s;
-}
-.fade-in-text-description {
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 .bookingbar {
   position: absolute;
   top: 85vh;
@@ -264,7 +167,7 @@ const coverDescriptionMobile =
     display: none; /* Hidden by default */
     width: 90%; /* Full width (cover the whole page) */
     height: 100vh; /* Full height (cover the whole page) */
-    top: 20vh;
+    top: 25vh;
     left: 5vw;
     right: 0;
     display: block;
@@ -289,7 +192,7 @@ const coverDescriptionMobile =
     display: none; /* Hidden by default */
     width: 100vw; /* Full width (cover the whole page) */
     height: 20vh; /* Full height (cover the whole page) */
-    top: 20vh;
+    top: 15vh;
     right: 0;
     display: block;
     bottom: 0;
