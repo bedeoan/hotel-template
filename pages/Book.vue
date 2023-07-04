@@ -31,9 +31,3 @@ const roomsWithPrice = computed(() =>
   rooms.value ? rooms.value.filter((x) => x.price).sort(sortByPrice) : []
 );
 </script>
-
-<style>
-
-.roomsarea {
-}
-</style>

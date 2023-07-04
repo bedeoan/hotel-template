@@ -12,3 +12,5 @@
 ## Pornit campanie de google
 -o campanie basic, google (1.000 lei)
 -500 lei la raul...
+
+-don' forget about hosting please switch cu totul , 200 lei mie !!!

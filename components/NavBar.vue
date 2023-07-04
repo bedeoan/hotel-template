@@ -54,7 +54,7 @@
             </li>
             <li class="mx-2">
               <nuxt-link to="/Book">
-                <el-button type="primary">Book now</el-button>
+                <el-button class="hover:scale-110" type="primary">Book now</el-button>
               </nuxt-link>
             </li>
           </ul>

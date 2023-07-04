@@ -5,17 +5,16 @@
       :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
       id="overlay"
     ></div>
-
     <div id="overlaytext" class="px-2">
-      <div class="title leading-10 text-white mb-5">
+      <div class="title leading-10 text-white mb-5 fade-in-text">
         {{ coverTitle }}
       </div>
-      <div class="text-white text-center description">
+      <div class="text-white text-center description fade-in-text-description">
         <div v-if="!$device.isMobile">
           {{ coverDescription }}
         </div>
       </div>
-      <div class="text-white text-center description2 mt-8">
+      <div class="text-white text-center description2 mt-8 fade-in-text-description">
         Tratament balneoclimateric, Conditii moderne, Obiective turistice usor
         accesibile
       </div>
@@ -91,13 +90,13 @@
             </div>
           </div>
         </div>
-        <div class="">
+        <div class="ml-2">
           <nuxt-link to="/Book">
             <el-button
               :style="$device.isMobile ? 'width:50vw' : ''"
               type="warning"
               size="large"
-              class="mt-5"
+              class="mt-5 hover:scale-110"
               >Rezerva acum</el-button
             >
           </nuxt-link>
@@ -113,7 +112,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onBeforeMount, onBeforeUnmount } from "vue";
 import gsap from "gsap";
 
 const positionTop = ref(0);
@@ -131,15 +129,21 @@ const list = [
     link: "https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png",
   },
 ];
-
 const query = ref("");
 const scrollY = ref(0);
-const computedList = computed(() => {
-  return list.filter((item) => scrollY.value > 1);
-});
+
+// const computedList = computed(() => {
+//   return list.filter((item) => scrollY.value > 1);
+// });
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
+const computedList = ref(null)
+onMounted(() => {
+  setTimeout(() => {
+    computedList.value = list
+  }, 2000)
+})
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
 });
@@ -150,7 +154,6 @@ function onBeforeEnter(el) {
   el.style.opacity = 0;
   el.style.height = 0;
 }
-
 function onEnter(el, done) {
   gsap.to(el, {
     opacity: 1,
@@ -181,6 +184,45 @@ const coverDescriptionMobile =
 </script>
 
 <style scoped>
+.fade-in-text {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+.fade-in-text-description {
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 .bookingbar {
   position: absolute;
   top: 85vh;

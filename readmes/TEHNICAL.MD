@@ -26,10 +26,22 @@ element ui - syntax
 [ ] Element ui -  fa un import general pentu icons si altele si acol pui tot si il folosesti
 [ ] Decizie cod curat Responsive -  all components should be mobile and desktop separat, only simple stuff do with breakpoints
 
-
 ## tehnic question (how is best way)
 [ ] on the fly crop image and show what part you need
 
 ## nu uita si de tailwind elements ?? poate poti folosi in loc de element ui ???
 vezi dimensiune
 vezi usurinta
+
+
+## what have i learned ??
+svg is cool , should take tutorial ..., green sock
+basic text animation 
+
+
+## todo 9-10
+[ ] Basic text animation & small deffects!
+[ ] 
+[ ] margins and widths for all devices
+[ ] repair first click problem
+[ ] replace element ui, shity elements there

@@ -1,6 +1,10 @@
 ## TEST
 
 ## 1. make page interactive
+
+a) what to animate, what is possible?
+b) how to animate, define specific use-cases
+
 -transiztion zoom in on image ceva...
 -hover on button ceva...
 -booking gen este liber pe data aia

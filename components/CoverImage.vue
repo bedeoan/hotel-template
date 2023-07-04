@@ -16,7 +16,7 @@
         <div class="flex pa-2">
           <img
             class="w-1/3"
-            src="https://teleptean.s3.eu-west-3.amazonaws.com/small_big_pensiunea_teleptean_ocna_sugatag_qzd6458vg1am_278e0d6ad4.jpg"
+            src="https://teleptean.s3.eu-west-3.amazonaws.com/big_pensiunea_teleptean_ocna_sugatag_qzd6458vg1am_29861937f2.jpg"
             alt=""
           />
           <img
