@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex text-white bg-gray-600 text-sm  p-5"
+    class="flex text-white bg-gray-600 text-sm p-5"
   >
-    <div class="flex-1 pa-5">
+    <div class="flex-1 ml-5">
       <div class="mb-5">
         <img style="width: 50px" src="/logo.png" />
       </div>

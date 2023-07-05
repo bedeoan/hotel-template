@@ -41,8 +41,8 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
 import { User, Phone, Check } from "@element-plus/icons-vue";
+const config = useRuntimeConfig();
 const dialogVisible = ref(false);
 const markConversion = () => {
   // mark as conversion

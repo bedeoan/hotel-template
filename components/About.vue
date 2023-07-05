@@ -1,7 +1,6 @@
 <template>
   <div>
     <div style="margin-top: 5vh">
-      {{ targetIsVisible }}
       <div class="text-2xl text-center"  ref="target1">Despre Pensiunea Teleptean</div>
       <div class="flex justify-center mt-5">
         <div class="details">

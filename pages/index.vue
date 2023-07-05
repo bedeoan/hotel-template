@@ -7,15 +7,18 @@
     ></div>
     <div id="overlaytext" class="px-2">
       <div class="title leading-10 text-white mb-5 fade-in-text">
-        {{ coverTitle }}
+        {{ config.public.coverTitle }}
       </div>
       <div class="text-white text-center description fade-in-text-description">
         <div v-if="!$device.isMobile">
-          {{ coverDescription }}
+          {{ config.public.coverDescription }}
         </div>
+        <div v-else></div>
       </div>
-      <div class="text-white text-center description2 mt-8 fade-in-text-description">
-        {{ coverDescription2 }}
+      <div
+        class="text-white text-center description2 mt-8 fade-in-text-description"
+      >
+        {{ config.public.coverDescription2 }}
       </div>
 
       <div v-if="$device.isMobile" class="flex mt-2">
@@ -79,50 +82,26 @@
               type="warning"
               size="large"
               class="mt-5 hover:scale-110"
-              >Rezerva acum</el-button
+              >{{ config.public.BookNow }}</el-button
             >
           </nuxt-link>
         </div>
       </div>
     </div>
-    <About :scrollY="scrollY" style="margin-top: 10vh;"> </About>
-    <Facilities style="margin-top: 100px; margin-bottom: 100px"></Facilities>
-    <Spa v-if="$device.isDesktop"></Spa>
-    <BeHappy class="my-5"></BeHappy>
-    <ContactForm></ContactForm>
+    <About class="my-20" />
+    <Facilities class="my-20" />
+    <Spa v-if="$device.isDesktop" />
+    <BeHappy class="my-5" />
+    <ContactForm />
   </div>
 </template>
 
 <script setup>
-const positionTop = ref(0);
-const positiontLeft = ref(0);
-
-
-const query = ref("");
-const scrollY = ref(0);
-const innerHeight = ref(0)
-const handleScroll = () => {
-  scrollY.value = window.scrollY;
-  innerHeight.value = window.innerHeight;
-};
-onBeforeMount(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+const config = useRuntimeConfig();
 const checkIn = ref("");
 const checkOut = ref("");
 const adults = ref(2);
 const children = ref(0);
-const coverTitle =
-  "Rezervă-ți vacanța la Pensiunea Teleptean chiar in inima Maramuresului.";
-const coverDescription =
-  " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României. Îmbinând tradiția cu confortul modern, te invităm să te bucuri de o experiență de neuitat într-un peisaj idilic, cu dealuri verzi și sate pitorești.";
-const coverDescriptionMobile =
-  " Descoperă autenticitatea și frumusețea Maramureșului: Pensiunea noastră, o oază de relaxare și ospitalitate în inima României.";
-  const coverDescription2 =
-  "Tratament balneoclimateric, Conditii moderne, Obiective turistice usor ,accesibile";
 </script>
 
 <style scoped>
