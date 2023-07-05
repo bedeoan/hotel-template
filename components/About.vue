@@ -1,7 +1,8 @@
 <template>
   <div>
     <div style="margin-top: 5vh">
-      <div class="text-2xl text-center">Despre Pensiunea Teleptean</div>
+      {{ targetIsVisible }}
+      <div class="text-2xl text-center"  ref="target1">Despre Pensiunea Teleptean</div>
       <div class="flex justify-center mt-5">
         <div class="details">
           Alege din opțiunile noastre de cazare, în funcție de nevoile tale și
@@ -35,15 +36,9 @@
         </div>
       </div>
       <div class="pa-2" v-else>
-        <TransitionGroup
-          tag="div"
-          :css="true"
-          @before-enter="onBeforeEnter"
-          @enter="onEnter"
-          @leave="onLeave"
-        >
+        <Customfade>
           <div
-            v-for="(item, index) in computedList"
+            v-for="(item, index) in filteredList"
             :key="index"
             :data-index="index"
             style="height: auto; background: red"
@@ -59,7 +54,7 @@
               title="Camera Dubla"
             ></RoomCard>
           </div>
-        </TransitionGroup>
+        </Customfade>
       </div>
 
       <!-- <div class="mx-2 mb-2">
@@ -86,26 +81,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import gsap from "gsap";
-
-const props = defineProps({
-  scrollY: Number,
-});
-function onBeforeEnter(el) {
-  el.style.opacity = 0;
-  el.style.height = 0;
-}
-
-function onEnter(el, done) {
-  gsap.to(el, {
-    opacity: 1,
-    height: "auto",
-    delay: el.dataset.index * 0.15,
-    onComplete: done,
-  });
-}
-const list = [
+const list = ref([
   {
     title: "Apartament",
     link: 17,
@@ -121,13 +97,8 @@ const list = [
     hideOverlay: true,
     details: "Cameră frumoasă și spațioasă, cu paturi king-size și un con"
   },
-];
-
-const query = ref("");
-
-const computedList = computed(() => {
-  return list.filter((item) => props.scrollY > 300);
-});
+]);
+const { filteredList, target: target1 } = useCustomFade(list);
 </script>
 
 <style scoped>

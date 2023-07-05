@@ -2,6 +2,7 @@
   <div class="flex row parent">
     <div class="flex-1">
       <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
+
       <div class="text-center my-5 px-3">
         Tratamentul balneoclimateric este esențial pentru întreținerea
         sănătății. Oferim diverse terapii precum sauna umedă, ideală pentru
@@ -9,15 +10,14 @@
         durerile musculare. Salina purifică sistemul respirator, iar masajul
         relaxează musculatura și alină stresul.
       </div>
-      <div class="flex flex-center text-xl mt-2 facilitylist mr-10">
-        <TransitionGroup
-          tag="div"
-          @before-enter="onBeforeEnter"
-          @enter="onEnter"
-          @leave="onLeave"
-        >
+      <div ref="target">
+      </div>
+      <div
+        class="flex flex-center text-xl mt-2 facilitylist mr-10"
+      >
+        <Customfade>
           <div
-            v-for="(facility, index) in facilityList"
+            v-for="(facility, index) in filteredList"
             :key="index"
             class="mt-2"
           >
@@ -31,9 +31,10 @@
               </nuxt-link>
             </div>
           </div>
-        </TransitionGroup>
+        </Customfade>
       </div>
     </div>
+    
     <div v-if="!$device.isMobile" class="flex-1">
       <div>
         <img
@@ -52,27 +53,8 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { CircleCheck, InfoFilled } from "@element-plus/icons-vue";
-import gsap from "gsap";
-
-const props = defineProps({
-  scrollY: Number,
-});
-function onBeforeEnter(el) {
-  el.style.opacity = 0;
-  el.style.height = 0;
-}
-
-function onEnter(el, done) {
-  gsap.to(el, {
-    opacity: 1,
-    height: "auto",
-    duration: 2,
-    delay: el.dataset.index * 2,
-    onComplete: done,
-  });
-}
 const list = ref([
   {
     name: "Tratament Balneoclimateric",
@@ -83,13 +65,8 @@ const list = ref([
   { name: "Sauna umeda" },
   { name: "Mai multe informatii" },
 ]);
-const { isMobile } = useDevice();
-const facilityList = computed(() => {
-  if (isMobile) {
-    return list.value.filter((item) => props.scrollY > 1300);
-  }
-  return list.value;
-});
+const { filteredList, target } = useCustomFade(list);
+
 </script>
 
 <style scoped>

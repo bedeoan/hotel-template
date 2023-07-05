@@ -86,7 +86,7 @@
       </div>
     </div>
     <About :scrollY="scrollY" style="margin-top: 10vh;"> </About>
-    <Facilities :scrollY="scrollY" style="margin-top: 100px; margin-bottom: 100px"></Facilities>
+    <Facilities style="margin-top: 100px; margin-bottom: 100px"></Facilities>
     <Spa v-if="$device.isDesktop"></Spa>
     <BeHappy class="my-5"></BeHappy>
     <ContactForm></ContactForm>
@@ -100,9 +100,10 @@ const positiontLeft = ref(0);
 
 const query = ref("");
 const scrollY = ref(0);
-
+const innerHeight = ref(0)
 const handleScroll = () => {
   scrollY.value = window.scrollY;
+  innerHeight.value = window.innerHeight;
 };
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);

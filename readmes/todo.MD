@@ -17,6 +17,10 @@ b) how to animate, define specific use-cases
 
 
 ### TODO
+
+[-] Pixel perfect stuf
+    [x] can i get a universal position of the index???
+    [ ] make plugin or shit sa poti folosi usor oriune si scrie in tehnique !!
 [ ] overlay de nume camerea se poate extrage intr-o componenta !!!
 [ ] env variables
 [ ] zona de promotii

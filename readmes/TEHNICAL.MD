@@ -47,7 +47,7 @@ basic text animation
 
 
 ### what have i learned , how am i better ?
-
+-custom fade vueuse and custom component with slot - sweet
 
 -------
 [ ] analyste from seo perspective !!!
