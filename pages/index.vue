@@ -85,8 +85,8 @@
         </div>
       </div>
     </div>
-    <About style="margin-top: 10vh;"> </About>
-    <Facilities style="margin-top: 100px; margin-bottom: 100px"></Facilities>
+    <About :scrollY="scrollY" style="margin-top: 10vh;"> </About>
+    <Facilities :scrollY="scrollY" style="margin-top: 100px; margin-bottom: 100px"></Facilities>
     <Spa v-if="$device.isDesktop"></Spa>
     <BeHappy class="my-5"></BeHappy>
     <ContactForm></ContactForm>

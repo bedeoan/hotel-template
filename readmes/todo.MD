@@ -20,3 +20,6 @@ b) how to animate, define specific use-cases
 [ ] overlay de nume camerea se poate extrage intr-o componenta !!!
 [ ] env variables
 [ ] zona de promotii
+
+[ ] abstractization for transition component stuf..
+    ->cum pot sa nu transmit scoll property ???

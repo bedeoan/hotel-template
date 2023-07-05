@@ -10,7 +10,7 @@
         </div>
       </div>
       <div v-if="!$device.isMobile" class="flex justify-center mt-5">
-        <div class="flex row" style="width:80vw">
+        <div class="flex row" style="width: 80vw">
           <div class="flex-1">
             <RoomCard
               link="15"
@@ -35,28 +35,36 @@
         </div>
       </div>
       <div class="pa-2" v-else>
-        <div class="mx-2 mb-2">
-          <RoomCard
-            link="15"
-            roomName="Apartament"
-            button="Vezi"
-            title="Apartament"
-            image="https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00781_ff602c0994.jpg"
-            details="Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit. Începeți dimineața într-un cadru elegant cu micul dejun gratuit, bogat si variat."
-          ></RoomCard>
-        </div>
-
-        <div class="mx-2 mb-2">
-          <RoomCard
-            link="17"
-            :hideOverlay="true"
-            image="https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00967_bff4aadeee.jpg"
-            roomName="camera3"
-            button="Vezi"
-            title="Camera Dubla"
-          ></RoomCard>
-        </div>
+        <TransitionGroup
+          tag="div"
+          :css="true"
+          @before-enter="onBeforeEnter"
+          @enter="onEnter"
+          @leave="onLeave"
+        >
+          <div
+            v-for="(item, index) in computedList"
+            :key="index"
+            :data-index="index"
+            style="height: auto; background: red"
+            class="mx-2 mb-2"
+          >
+            <RoomCard
+              :link="item.link"
+              :hideOverlay="item.hideOverlay"
+              :image="item.image"
+              :roomName="item.name"
+              :details="item.details"
+              button="Vezi"
+              title="Camera Dubla"
+            ></RoomCard>
+          </div>
+        </TransitionGroup>
       </div>
+
+      <!-- <div class="mx-2 mb-2">
+     
+        </div> -->
       <!-- <div class="flex justify-center">
           <div class="flex" style="width: 80vw">
             <div class="flex-1">
@@ -76,6 +84,52 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, computed } from "vue";
+import gsap from "gsap";
+
+const props = defineProps({
+  scrollY: Number,
+});
+function onBeforeEnter(el) {
+  el.style.opacity = 0;
+  el.style.height = 0;
+}
+
+function onEnter(el, done) {
+  gsap.to(el, {
+    opacity: 1,
+    height: "auto",
+    delay: el.dataset.index * 0.15,
+    onComplete: done,
+  });
+}
+const list = [
+  {
+    title: "Apartament",
+    link: 17,
+    image: "https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00781_ff602c0994.jpg",
+    hideOverlay: false,
+    details:
+      "Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit. Începeți dimineața într-un cadru elegant cu micul dejun gratuit, bogat si variat.",
+  },
+  {
+    title: "Camera dubla",
+    link: 15,
+    image: "https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00967_bff4aadeee.jpg",
+    hideOverlay: true,
+    details: "Cameră frumoasă și spațioasă, cu paturi king-size și un con"
+  },
+];
+
+const query = ref("");
+
+const computedList = computed(() => {
+  return list.filter((item) => props.scrollY > 300);
+});
+</script>
+
 <style scoped>
 @media only screen and (min-width: 600px) {
   .details {
@@ -86,7 +140,7 @@
 @media only screen and (max-width: 600px) {
   .details {
     width: 100vw;
-    font-size: 8x;
+    font-size: 8px;
     padding: 10px;
   }
 }

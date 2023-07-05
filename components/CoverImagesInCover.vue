@@ -24,12 +24,10 @@
 const list = [
   {
     msg: "foto1",
-    limit: 200,
     link: "https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg",
   },
   {
     msg: "foto2",
-    limit: 200,
     link: "https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png",
   },
 ];

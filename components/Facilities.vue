@@ -9,41 +9,33 @@
         durerile musculare. Salina purifică sistemul respirator, iar masajul
         relaxează musculatura și alină stresul.
       </div>
-      <div class="flex flex-center facilitylist">
-        <ul class="text-xl">
-          <li class="mt-2">
-            <el-icon color="orange"><CircleCheck /></el-icon>
-            Tratament Balneoclimateric
-          </li>
-          <li class="mt-2">
-            <el-icon color="orange"><CircleCheck /></el-icon>
-            Sauna umeda
-          </li>
-          <li class="mt-2">
-            <el-icon color="orange"><CircleCheck /></el-icon>
-            Sauna uscata
-          </li>
-          <li class="mt-2">
-            <el-icon color="orange"><CircleCheck /></el-icon>
-            Salina
-          </li>
-          <li class="mt-2">
-            <el-icon color="orange"><CircleCheck /></el-icon>
-            Masaj
-          </li>
-          <li class="mt-5">
-            <!-- <el-button size="large" type="primary">
-              <el-icon class="mr-2"><InfoFilled /></el-icon>
-            </el-button> -->
-            <nuxt-link to="/contact">
-              <el-button type="primary">Mai multe informatii</el-button>
-            </nuxt-link>
-          </li>
-        </ul>
+      <div class="flex flex-center text-xl mt-2 facilitylist mr-10">
+        <TransitionGroup
+          tag="div"
+          @before-enter="onBeforeEnter"
+          @enter="onEnter"
+          @leave="onLeave"
+        >
+          <div
+            v-for="(facility, index) in facilityList"
+            :key="index"
+            class="mt-2"
+          >
+            <div v-if="facility.name !== 'Mai multe informatii'">
+              <el-icon color="orange"><CircleCheck /></el-icon>
+              {{ facility.name }}
+            </div>
+            <div v-else>
+              <nuxt-link to="/contact">
+                <el-button type="primary">Mai multe informatii</el-button>
+              </nuxt-link>
+            </div>
+          </div>
+        </TransitionGroup>
       </div>
     </div>
     <div v-if="!$device.isMobile" class="flex-1">
-      <div class="">
+      <div>
         <img
           class="shadow"
           style="width: 35vw; margin-left: 100px; border-radius: 20px"
@@ -62,6 +54,42 @@
 
 <script setup>
 import { CircleCheck, InfoFilled } from "@element-plus/icons-vue";
+import gsap from "gsap";
+
+const props = defineProps({
+  scrollY: Number,
+});
+function onBeforeEnter(el) {
+  el.style.opacity = 0;
+  el.style.height = 0;
+}
+
+function onEnter(el, done) {
+  gsap.to(el, {
+    opacity: 1,
+    height: "auto",
+    duration: 2,
+    delay: el.dataset.index * 2,
+    onComplete: done,
+  });
+}
+const list = ref([
+  {
+    name: "Tratament Balneoclimateric",
+  },
+  { name: "Salina" },
+  { name: "Masaj" },
+  { name: "Sauna uscata" },
+  { name: "Sauna umeda" },
+  { name: "Mai multe informatii" },
+]);
+const { isMobile } = useDevice();
+const facilityList = computed(() => {
+  if (isMobile) {
+    return list.value.filter((item) => props.scrollY > 1300);
+  }
+  return list.value;
+});
 </script>
 
 <style scoped>
