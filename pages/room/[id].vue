@@ -98,9 +98,10 @@
 <script setup>
 import { CircleCheck } from "@element-plus/icons-vue";
 const route = useRoute();
+const config = useRuntimeConfig();
 const link = route.params.id;
 const { data: room } = await useFetch(
-  "https://apisite.teleptean.facturi.erpx.ro/rooms/" + route.params.id
+  `${config.public.API_URL}/rooms/${route.params.id}`
 );
 </script>
 

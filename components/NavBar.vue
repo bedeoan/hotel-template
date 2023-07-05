@@ -117,10 +117,10 @@
 
 <script setup>
 import { ArrowDown } from "@element-plus/icons-vue";
-
+const config = useRuntimeConfig();
 const isOpen = ref(false);
 const { data: rooms } = await useFetch(
-  "https://apisite.teleptean.facturi.erpx.ro/rooms"
+  `${config.public.API_URL}/rooms`
 );
 const roomsWithPrice = computed(() =>
   rooms.value ? rooms.value.filter((x) => x.price) : []
