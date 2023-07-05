@@ -3,31 +3,31 @@
     <div class="flex images" :style="$device.isMobile ? 'height:60vh' : 'height:90vh'">
       <img
         :style="$device.isMobile ? 'height:50vh' : 'height:90vh'"
-        src="https://aventurescu.ro/wp-content/uploads/2016/07/ecomaramures2.jpg"
+        :src="config.public.COVER1"
         alt="Hotel Image"
       />
       <div v-if="!$device.isMobile">
         <img
           class="w-full"
-          src="https://teleptean.s3.eu-west-3.amazonaws.com/2019_08_04_504c3814e9.jpg"
+          :src="config.public.COVER2"
           alt=""
         />
 
         <div class="flex pa-2">
           <img
             class="w-1/3"
-            src="https://teleptean.s3.eu-west-3.amazonaws.com/big_pensiunea_teleptean_ocna_sugatag_qzd6458vg1am_29861937f2.jpg"
+            :src="config.public.COVER3"
             alt=""
           />
           <img
             class="w-1/3"
-            src="https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg"
+            :src="config.public.COVER4"
             alt=""
           />
    
           <img
             class="w-1/3"
-            src="https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png"
+            :src="config.public.COVER5"
             alt=""
           />
         </div>
@@ -35,3 +35,6 @@
     </div>
   </div>
 </template>
+<script setup>
+const config = useRuntimeConfig();
+</script>
