@@ -16,7 +16,7 @@
         <div v-else class="flex-1">-</div>
       </div>
       <div class="pt-2 flex-1">
-        <div class="text-center font-bold mb-5">
+        <div class="text-center mb-5">
           {{ room.name }}
         </div>
         <div
@@ -30,8 +30,8 @@
         <div style="margin-left: 5vw" class="mt-2">
           <nuxt-link :to="{ name: 'room-id', params: { id: room.id } }">
             <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
             >
+            <el-icon><InfoFilled /></el-icon>
               {{ config.public.moreInfo }}
             </button>
           </nuxt-link>
@@ -55,7 +55,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
-import { User, Phone, Check } from "@element-plus/icons-vue";
+import { User, Phone, Check, InfoFilled } from "@element-plus/icons-vue";
 const props = defineProps({
   roomsWithPrice: Array,
 });

@@ -11,7 +11,7 @@
         }
       "
       :style="$device.isMobile ? 'width:50vw' : ''"
-      class="bg-blue-400 hover:scale-110 text-white font-bold py-2 px-4 rounded"
+      class="bg-blue-400 hover:scale-110 text-white py-2 px-4 rounded"
     >
       <span v-if="label">{{ label }}</span>
       <span v-else>{{ config.public.bookButton }}</span>
@@ -31,7 +31,7 @@
             <div class="ml-2 flex justify-center text-xl">
               <div class="ml-2">
                 <div class="my-3">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                  <button class="bg-blue-500 hover:bg-blue-700 text-sm text-white py-2 px-4 border border-blue-700 rounded"
                     @click="callClient(config.public.CONTACT_PHONE1)"
                   >
                     <el-icon class="mr-2" size="large"><Phone /></el-icon>

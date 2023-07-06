@@ -18,66 +18,20 @@
     <div class="flex justify-center">
       <div style="width: 80vw">
         <div class="my-5">
-          Camere confortabile și spațioase cu paturi king-size și toate
-          facilitățile pe care v-ați aștepta de la Pensiunea Teleptean! Începeți
-          dimineața preferată cu micul dejun gratuit bogat si variat.
+          {{ roomText }}
         </div>
         <ul class="text-center my-5">
-          <li>
+          <li v-for="(item, index) in facilities" :key="index">
             <el-icon>
               <CircleCheck></CircleCheck>
             </el-icon>
-            Parcare privată
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Spa și centru de wellness
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Piscina interioara si exterioara
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Televizor
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            WiFi gratuit inclus
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Camere pentru nefumători disponibile
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Mic dejun foarte bun
-          </li>
-          <li>
-            <el-icon>
-              <CircleCheck></CircleCheck>
-            </el-icon>
-            Bar
+            {{ item.name }}
           </li>
         </ul>
 
         <div class="my-5">
-          La Pensiunea Teleptean, ne străduim să oferim oaspeților noștri o
-          experiență confortabilă și memorabilă. Toate camerele noastre sunt
-          echipate cu cele mai moderne facilități pentru a vă face sejurul cât
-          mai plăcut posibil.
+          {{ roomText2 }}
+    
         </div>
       </div>
     </div>
@@ -98,6 +52,18 @@ const link = route.params.id;
 const { data: room } = await useFetch(
   `${config.public.API_URL}/rooms/${route.params.id}`
 );
+const facilities = ref([
+  {name: 'Parcare privată'},
+  {name: 'Spa și centru de wellness'},
+  {name: 'Piscina interioara si exterioara'},
+  {name: 'Televizor'},
+  {name: 'WiFi gratuit inclus'},
+  {name: 'Camere pentru nefumători disponibile'},
+  {name: 'Mic dejun foarte bun'},
+  {name: 'Bar'}
+])
+const roomText='Camere confortabile și spațioase cu paturi king-size și toate facilitățile pe care v-ați aștepta de la Pensiunea Teleptean! Începeți dimineața preferată cu micul dejun gratuit bogat si variat.'
+const roomText2='La Pensiunea Teleptean, ne străduim să oferim oaspeților noștri o experiență confortabilă și memorabilă. Toate camerele noastre sunt echipate cu cele mai moderne facilități pentru a vă face sejurul cât mai plăcut posibil.'
 </script>
 
 <style scoped>

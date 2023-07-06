@@ -16,7 +16,7 @@
         <div v-else class="">-</div>
       </div>
       <div class="pt-2">
-        <div class="ml-5 text-2xl font-bold mb-5">
+        <div class="ml-5 text-2xl mb-5">
           {{ room.name }}
           <div></div>
         </div>
@@ -29,7 +29,7 @@
           :to="{ name: 'room-id', params: { id: room.id } }"
         >
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            class="bg-blue-500 hover:bg-blue-700 text-sm text-white py-2 px-4 border border-blue-700 rounded"
           >
             <el-icon>
               <InfoFilled></InfoFilled>

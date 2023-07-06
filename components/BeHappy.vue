@@ -15,7 +15,7 @@
         </div>
         <nuxt-link to="/contact">
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            class="bg-blue-500 hover:bg-blue-700 text-sm text-white py-2 px-4 border border-blue-700 rounded"
           >
             {{ config.public.behappyContact }}
           </button>

@@ -23,7 +23,7 @@
           </div>
           <div class="ml-2">
             <div class="my-2">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+              <button class="text-blue-500 py-2 px-4"
                 @click="callClient(config.public.CONTACT_PHONE1)"
                 >{{ config.public.CONTACT_PHONE1 }}</button
               >

@@ -19,7 +19,7 @@
             </li>
             <li class="sm:mr-5">
               <el-dropdown>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                <button class="bg-blue-500 text-white py-2 px-4 rounded">
                   Camere
                   <el-icon class="el-icon--right">
                     <arrow-down />
@@ -54,7 +54,7 @@
             </li>
             <li class="mx-2">
               <nuxt-link to="/Book">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Book now</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 border border-blue-700 rounded">Rezerva acum</button>
               </nuxt-link>
             </li>
           </ul>
