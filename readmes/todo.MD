@@ -23,6 +23,8 @@ b) how to animate, define specific use-cases
     [x] make plugin or shit sa poti folosi usor oriune si scrie in tehnique !!
 
 ------
+[.] al in env
+[ ] images in backend !!!
 [ ] ok so slider not working well...
 in vueuse folosesc alt librarie vezi acolo ??
 
