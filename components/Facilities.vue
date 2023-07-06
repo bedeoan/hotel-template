@@ -27,7 +27,7 @@
             </div>
             <div v-else>
               <nuxt-link to="/contact">
-                <el-button type="primary">Mai multe informatii</el-button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Mai multe informatii</button>
               </nuxt-link>
             </div>
           </div>

@@ -22,14 +22,18 @@
         <div
           v-for="option in room.options"
           :key="option.id"
-          style="margin-left: 5vw;"
+          style="margin-left: 5vw"
         >
           <el-icon><Check></Check></el-icon>
           {{ option.name }}
         </div>
-        <div style="margin-left: 5vw;" class="mt-2"> 
+        <div style="margin-left: 5vw" class="mt-2">
           <nuxt-link :to="{ name: 'room-id', params: { id: room.id } }">
-            <el-button>{{ config.public.moreInfo }}</el-button>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            >
+              {{ config.public.moreInfo }}
+            </button>
           </nuxt-link>
         </div>
       </div>

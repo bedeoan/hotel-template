@@ -23,10 +23,9 @@
           </div>
           <div class="ml-2">
             <div class="my-2">
-              <el-button
-                link
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
                 @click="callClient(config.public.CONTACT_PHONE1)"
-                >{{ config.public.CONTACT_PHONE1 }}</el-button
+                >{{ config.public.CONTACT_PHONE1 }}</button
               >
             </div>
             <!-- <div>
@@ -52,7 +51,7 @@
             >
               <el-icon class="mr-2" size="large"><Phone /></el-icon>
               Contact
-            </el-button>
+            </button>
           </div> -->
         </div>
       </div>

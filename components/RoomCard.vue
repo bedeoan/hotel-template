@@ -13,7 +13,7 @@
             {{ details }}
           </div>
           <div class="ml-2 px-5 mt-2">
-            <el-button type="warning">{{ button }}</el-button>
+            <button>{{ button }}</button>
           </div>
         </div>
         <div v-else class="overlay2">

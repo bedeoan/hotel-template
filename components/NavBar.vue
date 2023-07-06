@@ -19,12 +19,12 @@
             </li>
             <li class="sm:mr-5">
               <el-dropdown>
-                <el-button class="border-transparent rooms" color="bg-blue-500">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
                   Camere
                   <el-icon class="el-icon--right">
                     <arrow-down />
                   </el-icon>
-                </el-button>
+                </button>
                 <template #dropdown>
                   <el-dropdown-menu>
                     <el-dropdown-item
@@ -54,7 +54,7 @@
             </li>
             <li class="mx-2">
               <nuxt-link to="/Book">
-                <el-button class="hover:scale-110" type="primary">Book now</el-button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Book now</button>
               </nuxt-link>
             </li>
           </ul>
@@ -81,12 +81,12 @@
             </li>
             <li class="sm:mr-5 my-3">
               <el-dropdown>
-                <el-button
+                <button
                   class="border-transparent rooms"
                   color="bg-blue-500"
                 >
                   <span class="text-lg"> Camere </span>
-                </el-button>
+                </button>
                 <template #dropdown>
                   <el-dropdown-menu>
                     <el-dropdown-item

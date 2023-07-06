@@ -45,9 +45,7 @@
       >
         <div class="flex row">
           <div class="flex-1 mb-2">
-            <el-button :icon="Back" @click="dialogVisible = false"
-              >Inapoi</el-button
-            >
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" @click="dialogVisible = false">Inapoi</button>
           </div>
           <div class="ml-2 items-center justify-center flex">
             <div class="mr-5 text-xl">
@@ -62,8 +60,7 @@
         </div>
         <div v-if="$device.isDesktop" class="flex flex-row">
           <div class="flex">
-            <el-button
-              link
+            <button
               :disabled="(i == images.length) == 0"
               :icon="ArrowLeft"
               :style="
@@ -72,7 +69,7 @@
                   : 'height: 20vh; font-size: 5vh'
               "
               @click="setActiveItemForCarousel(-1)"
-            ></el-button>
+            ></button>
           </div>
           <div class="flex-1">
             <el-carousel
@@ -98,7 +95,7 @@
             </el-carousel>
           </div>
           <div class="flex">
-            <el-button
+            <button
               :disabled="i == images.length - 1"
               link
               :icon="ArrowRight"
@@ -108,7 +105,7 @@
                   : 'height: 20vh; font-size: 5vh'
               "
               @click="setActiveItemForCarousel(1)"
-            ></el-button>
+            ></button>
           </div>
         </div>
         <div v-else>
