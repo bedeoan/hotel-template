@@ -82,15 +82,10 @@
       </div>
     </div>
     <div class="flex justify-center my-5">
-      <BookButton label="Rezerva acum"></BookButton>
+      <BookButton :withArrow="true" :label="config.public.bookNow"></BookButton>
     </div>
     <div v-if="room && room.images" class="flex justify-center mb-5">
-      <ImageGallery
-        :images="room.images"
-        :index="index"
-        :disable-scroll="true"
-        @close="index = null"
-      />
+      <ImageGallery :images="room.images" />
     </div>
   </div>
 </template>
@@ -114,7 +109,7 @@ const { data: room } = await useFetch(
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 100vh; /* Full height (cover the whole page) */
+  height: auto; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
@@ -122,18 +117,16 @@ const { data: room } = await useFetch(
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.785); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
 }
 #overlaytext {
   position: absolute; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 100vh; /* Full height (cover the whole page) */
+  height: 300px; /* Full height (cover the whole page) */
   top: 35vh;
   right: 0;
   display: block;
   bottom: 0;
-  z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 10;
   cursor: pointer;
   text-align: center;
   color: #ffffff;

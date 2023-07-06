@@ -47,7 +47,10 @@ basic text animation
 
 
 ### what have i learned , how am i better ?
+!!! client only on some compoennts!!!!
 -custom fade vueuse and custom component with slot - sweet
-
+-bookbutton not working because not enought height in child comp. - (dialog not opening)
+and parent dosn't not have any element that occupy all screen
+carefull with z-index !!
 -------
 [ ] analyste from seo perspective !!!

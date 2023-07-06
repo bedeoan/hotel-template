@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-if="withArrow" class="animate-bounce flex justify-center mb-2">
+      <el-icon :size="30" color="#409EFC"><Bottom /></el-icon>
+    </div>
     <el-button
       @click="
         () => {
@@ -11,47 +14,53 @@
       type="primary"
     >
       <span v-if="label">{{ label }}</span>
-      <span v-else>rezerva</span>
+      <span v-else>{{ config.public.bookButton }}</span>
     </el-button>
     <client-only>
-
-    
-    <el-dialog :width="$device.isDesktop ? '20%' : '80%'" :modal="true" v-model="dialogVisible">
-      <div class="flex justify-center">
-        <div>
-          <div class="text-2xl mb-2">Pentru rezervari</div>
-          <div class="ml-2 flex justify-center text-xl">
-            <div class="ml-2">
-              <div class="my-3">
-                <el-button
-                  link
-                  @click="callClient(config.public.CONTACT_PHONE1)"
-                >
-                  <el-icon class="mr-2" size="large"><Phone /></el-icon>
-                  {{ config.public.CONTACT_PHONE1 }}</el-button
-                >
+      <el-dialog
+        :width="$device.isDesktop ? '20%' : '80%'"
+        :modal="true"
+        v-model="dialogVisible"
+      >
+        <div v-if="config" class="flex justify-center">
+          <div>
+            <div class="text-2xl mb-2">
+              {{ config.public.bookButtonforBookings }}
+            </div>
+            <div class="ml-2 flex justify-center text-xl">
+              <div class="ml-2">
+                <div class="my-3">
+                  <el-button
+                    link
+                    @click="callClient(config.public.CONTACT_PHONE1)"
+                  >
+                    <el-icon class="mr-2" size="large"><Phone /></el-icon>
+                    {{ config.public.CONTACT_PHONE1 }}</el-button
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </el-dialog>
-  </client-only>
+      </el-dialog>
+    </client-only>
   </div>
 </template>
 
 <script setup>
-import { User, Phone, Check } from "@element-plus/icons-vue";
+import { User, Phone, Check, Bottom } from "@element-plus/icons-vue";
 const config = useRuntimeConfig();
 const dialogVisible = ref(false);
 const markConversion = () => {
-  // mark as conversion
+  //TODO mark as conversion
+  console.log("da");
 };
 const callClient = (phone) => {
   const nodash = phone.replace(/-/g, "");
   window.location = "tel:+4" + nodash;
 };
 const props = defineProps({
-  label: String
-})
+  label: String,
+  withArrow: Boolean
+});
 </script>

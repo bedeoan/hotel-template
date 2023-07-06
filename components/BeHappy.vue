@@ -3,27 +3,32 @@
     <div>
       <img
         class="coverimg"
-        src="https://hotelstil.ro/wp-content/uploads/2022/04/Mask-group.png"
+        :src="config.public.behappyCoverImg"
       />
       <div class="overlay"></div>
       <div class="overlaytext">
         <div class="text-3xl" style="margin-top: 50px">
-          Bucura-te de timpul petrecut alaturi de noi
+          {{ config.public.behappy }}
         </div>
         <div class="my-5 px-2">
-          Puteți avea o ședere relaxantă și liniștită la Pensiunea Teleptean,
-          având încrederea că ne ocupăm de tot ce ține de confortul
-          dumneavoastră. Dacă aveți întrebări pentru noi:
+          {{ config.public.behappyDetails }}
+        </div>
+        <div class="mb-5">
+          {{ config.public.behappyDetails2 }}
         </div>
         <nuxt-link to="/contact">
-          <el-button type="primary">Contacteaza-ne</el-button>
+          <el-button type="primary">{{ config.public.behappyContact }}</el-button>
         </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+const config = useRuntimeConfig()
+</script>
 <style scoped>
+
 .coverimg {
   width: 100vw;
   height: 38vh;

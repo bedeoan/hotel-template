@@ -1,5 +1,5 @@
 <template>
-  <div style="height:1000px" class="layout">
+  <div class="layout">
     <NavBar></NavBar>
     <div style="padding-top: 10vh">
       <slot />

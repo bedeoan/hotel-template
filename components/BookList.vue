@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div
-      v-for="room in roomsWithPrice"
-      :key="room.id"
-      class="flex row"
-    >
+    <div v-for="room in roomsWithPrice" :key="room.id" class="flex row">
       <div class="flex-1 flex row">
         <div v-if="room.profile_image">
           <div v-if="room && room.images" class="flex justify-center mb-5">
@@ -26,28 +22,35 @@
         <div
           v-for="option in room.options"
           :key="option.id"
-          style="margin-left: 80px"
+          style="margin-left: 5vw;"
         >
           <el-icon><Check></Check></el-icon>
           {{ option.name }}
         </div>
+        <div style="margin-left: 5vw;" class="mt-2"> 
+          <nuxt-link :to="{ name: 'room-id', params: { id: room.id } }">
+            <el-button>{{ config.public.moreInfo }}</el-button>
+          </nuxt-link>
+        </div>
       </div>
+
       <div class="flex-1 pt-2 items-center text-center">
         <el-icon v-for="pers in room.pers" :key="pers"><User /></el-icon>
         <div class="text-neutral-300">x {{ room.pers }} pers</div>
       </div>
       <div class="flex-1 pt-2 text-center">
         {{ room.price }}
-        lei / camera
+        {{ config.public.currency }} / {{ config.public.camera }}
       </div>
       <div class="pt-2">
-        <BookButton label="Rezerva Acum"></BookButton>
+        <BookButton :label="config.public.bookNow"></BookButton>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 import { User, Phone, Check } from "@element-plus/icons-vue";
 const props = defineProps({
   roomsWithPrice: Array,

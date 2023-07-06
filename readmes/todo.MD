@@ -18,12 +18,22 @@ b) how to animate, define specific use-cases
 
 ### TODO
 
-[-] Pixel perfect stuf
+[x] Pixel perfect stuf
     [x] can i get a universal position of the index???
-    [ ] make plugin or shit sa poti folosi usor oriune si scrie in tehnique !!
+    [x] make plugin or shit sa poti folosi usor oriune si scrie in tehnique !!
+
+------
+[ ] ok so slider not working well...
+in vueuse folosesc alt librarie vezi acolo ??
+
 [ ] overlay de nume camerea se poate extrage intr-o componenta !!!
 [ ] env variables
 [ ] zona de promotii
 
 [ ] abstractization for transition component stuf..
     ->cum pot sa nu transmit scoll property ???
+
+
+----
+book button sa fie pe romana !!!
+mobile scroll la poze !!

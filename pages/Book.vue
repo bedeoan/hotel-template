@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center items-center roomsarea">
+    <div class="flex justify-center items-center">
       <div v-if="$device.isDesktop" style="width: 84vw" class="my-5">
         <BookList :roomsWithPrice="roomsWithPrice" />
       </div>

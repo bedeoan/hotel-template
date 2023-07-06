@@ -1,5 +1,8 @@
 <template>
   <div>
+    <client-only>
+
+    
     <div
       v-if="oneImageUrl === undefined"
       style="width: 80vw"
@@ -119,6 +122,7 @@
         <BookButton v-if="$device.isMobile" label="Rezervari acum"></BookButton>
       </div>
     </el-dialog>
+  </client-only>
   </div>
 </template>
 <script setup>

@@ -79,3 +79,8 @@ sa faca jump gen la button de rezerva..
 
 -zoom in pe poze
 -cand dai click sa te trimita la galerie oriune dai click !!
+
+----
+book now
+si 
+rezerva acum ???
