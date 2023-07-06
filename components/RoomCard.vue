@@ -4,7 +4,7 @@
       <div class="parent">
         <img
           :src="image"
-        />
+        >
         <div v-if="!hideOverlay" class="overlay">
           <div class="text-white text-2xl px-5 ml-2" style="margin-top: 2vh">
             {{ title }}
@@ -37,7 +37,7 @@ const props = defineProps({
   imagew: String,
   button: String,
   hideOverlay: Boolean
-});
+})
 </script>
 
 <style scoped>

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <CoverImage></CoverImage>
+    <CoverImage />
     <div
-      :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
       id="overlay"
-    ></div>
+      :style="$device.isMobile ? 'height:60vh' : 'height:100vh'"
+    />
     <div id="overlaytext" class="px-2">
       <div class="title leading-10 text-white mb-5 fade-in-text">
         {{ config.public.coverTitle }}
@@ -13,7 +13,7 @@
         <div v-if="!$device.isMobile">
           {{ config.public.coverDescription }}
         </div>
-        <div v-else></div>
+        <div v-else />
       </div>
       <div
         class="text-white text-center description2 mt-8 fade-in-text-description"
@@ -40,8 +40,7 @@
               v-model="checkIn"
               type="date"
               placeholder="Alege data"
-            >
-            </el-date-picker>
+            />
           </div>
         </div>
         <div class="bookingbarTitle">
@@ -50,8 +49,7 @@
             v-model="checkOut"
             type="date"
             placeholder="Alege data"
-          >
-          </el-date-picker>
+          />
         </div>
         <div class="flex flex-row">
           <div class="bookingbarTitle mr-2">
@@ -61,7 +59,7 @@
                 v-model="adults"
                 :min="1"
                 :max="10"
-              ></el-input-number>
+              />
             </div>
           </div>
           <div class="bookingbarTitle">
@@ -71,7 +69,7 @@
                 v-model="children"
                 :min="1"
                 :max="10"
-              ></el-input-number>
+              />
             </div>
           </div>
         </div>
@@ -96,11 +94,11 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
-const checkIn = ref("");
-const checkOut = ref("");
-const adults = ref(2);
-const children = ref(0);
+const config = useRuntimeConfig()
+const checkIn = ref('')
+const checkOut = ref('')
+const adults = ref(2)
+const children = ref(0)
 </script>
 
 <style scoped>

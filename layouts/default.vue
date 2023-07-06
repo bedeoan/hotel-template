@@ -1,10 +1,10 @@
 <template>
   <div class="layout">
-    <NavBar></NavBar>
+    <NavBar />
     <div style="padding-top: 10vh">
       <slot />
     </div>
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 

@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { Draggable } from 'gsap/Draggable'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   if (process.client) {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable)
   }
@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     provide: {
       gsap,
       Draggable,
-      ScrollTrigger,
-    },
+      ScrollTrigger
+    }
   }
 })

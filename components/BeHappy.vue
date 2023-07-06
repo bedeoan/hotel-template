@@ -1,8 +1,8 @@
 <template>
   <div style="height: 45vh; position: relative" class="flex items-center">
     <div>
-      <img class="coverimg" :src="config.public.behappyCoverImg" />
-      <div class="overlay"></div>
+      <img class="coverimg" :src="config.public.behappyCoverImg">
+      <div class="overlay" />
       <div class="overlaytext">
         <div class="text-3xl" style="margin-top: 50px">
           {{ config.public.behappy }}
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
+const config = useRuntimeConfig()
 </script>
 <style scoped>
 .coverimg {

@@ -3,9 +3,9 @@
     <TransitionGroup
       tag="ul"
       :css="false"
+      class="flex"
       @before-enter="onBeforeEnter"
       @enter="onEnter"
-      class="flex"
       @leave="onLeave"
     >
       <li
@@ -14,45 +14,45 @@
         class="w-1/2 mr-1"
         :data-index="index"
       >
-        <img class="rounded-lg mr-1 ml-1" :src="item.link" alt="" />
+        <img class="rounded-lg mr-1 ml-1" :src="item.link" alt="">
       </li>
     </TransitionGroup>
   </div>
 </template>
 
 <script setup>
+import gsap from 'gsap'
 const list = [
   {
-    msg: "foto1",
-    link: "https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg",
+    msg: 'foto1',
+    link: 'https://teleptean.s3.eu-west-3.amazonaws.com/2018_12_02_7173cc23b7.jpg'
   },
   {
-    msg: "foto2",
-    link: "https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png",
-  },
-];
-import gsap from "gsap";
-function onBeforeEnter(el) {
-  el.style.opacity = 0;
-  el.style.height = 0;
+    msg: 'foto2',
+    link: 'https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png'
+  }
+]
+function onBeforeEnter (el) {
+  el.style.opacity = 0
+  el.style.height = 0
 }
-function onEnter(el, done) {
+function onEnter (el, done) {
   gsap.to(el, {
     opacity: 1,
-    height: "1.6em",
+    height: '1.6em',
     duration: 1.5,
     delay: el.dataset.index * 1,
-    onComplete: done,
-  });
+    onComplete: done
+  })
 }
 
-function onLeave(el, done) {
+function onLeave (el, done) {
   gsap.to(el, {
     opacity: 0,
     height: 0,
     delay: el.dataset.index * 0.15,
-    onComplete: done,
-  });
+    onComplete: done
+  })
 }
 const listOfCoverImages = ref(null)
 onMounted(() => {

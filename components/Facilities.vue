@@ -1,7 +1,9 @@
 <template>
   <div class="flex row parent">
     <div class="flex-1">
-      <div class="text-4xl text-center">Facilitati Pensiunea Teleptean</div>
+      <div class="text-4xl text-center">
+        Facilitati Pensiunea Teleptean
+      </div>
 
       <div class="text-center my-5 px-3">
         Tratamentul balneoclimateric este esențial pentru întreținerea
@@ -10,8 +12,7 @@
         durerile musculare. Salina purifică sistemul respirator, iar masajul
         relaxează musculatura și alină stresul.
       </div>
-      <div ref="target">
-      </div>
+      <div ref="target" />
       <div
         class="flex flex-center text-xl mt-2 facilitylist mr-10"
       >
@@ -22,50 +23,54 @@
             class="mt-2"
           >
             <div v-if="facility.name !== 'Mai multe informatii'">
-              <el-icon color="orange"><CircleCheck /></el-icon>
+              <el-icon color="orange">
+                <CircleCheck />
+              </el-icon>
               {{ facility.name }}
             </div>
             <div v-else>
               <nuxt-link to="/contact">
-                <button class="bg-blue-400 hover:bg-blue-500 text-sm text-white py-2 px-4 text-sm rounded">Mai multe informatii</button>
+                <button class="bg-blue-400 hover:bg-blue-500 text-sm text-white py-2 px-4 text-sm rounded">
+                  Mai multe informatii
+                </button>
               </nuxt-link>
             </div>
           </div>
         </Customfade>
       </div>
     </div>
-    
+
     <div v-if="!$device.isMobile" class="flex-1">
       <div>
         <img
           class="shadow"
           style="width: 35vw; margin-left: 100px; border-radius: 20px"
           src="https://teleptean.s3.eu-west-3.amazonaws.com/small_big_pensiunea_teleptean_ocna_sugatag_qzd6458vg1am_278e0d6ad4.jpg"
-        />
+        >
       </div>
       <div class="overlay">
         <img
           src="https://teleptean.s3.eu-west-3.amazonaws.com/small_pasted_image_0_35f5d670f4.png"
           style="width: 20vw; border-radius: 20px"
-        />
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { CircleCheck, InfoFilled } from "@element-plus/icons-vue";
+import { CircleCheck, InfoFilled } from '@element-plus/icons-vue'
 const list = ref([
   {
-    name: "Tratament Balneoclimateric",
+    name: 'Tratament Balneoclimateric'
   },
-  { name: "Salina" },
-  { name: "Masaj" },
-  { name: "Sauna uscata" },
-  { name: "Sauna umeda" },
-  { name: "Mai multe informatii" },
-]);
-const { filteredList, target } = useCustomFade(list);
+  { name: 'Salina' },
+  { name: 'Masaj' },
+  { name: 'Sauna uscata' },
+  { name: 'Sauna umeda' },
+  { name: 'Mai multe informatii' }
+])
+const { filteredList, target } = useCustomFade(list)
 
 </script>
 

@@ -9,7 +9,9 @@
         </div>
         <div>
           <div class="text-2xl mb-5">
-            <el-icon size="large"><Location /></el-icon>
+            <el-icon size="large">
+              <Location />
+            </el-icon>
             Address
           </div>
 
@@ -18,15 +20,19 @@
           </div>
 
           <div class="text-2xl mt-5">
-            <el-icon size="large"><Phone /></el-icon>
+            <el-icon size="large">
+              <Phone />
+            </el-icon>
             Phone Number
           </div>
           <div class="ml-2">
             <div class="my-2">
-              <button class="text-blue-500 py-2 px-4"
+              <button
+                class="text-blue-500 py-2 px-4"
                 @click="callClient(config.public.CONTACT_PHONE1)"
-                >{{ config.public.CONTACT_PHONE1 }}</button
               >
+                {{ config.public.CONTACT_PHONE1 }}
+              </button>
             </div>
             <!-- <div>
               <el-button
@@ -38,10 +44,14 @@
           </div>
 
           <div class="text-2xl mt-5">
-            <el-icon size="large"><Message /></el-icon>
+            <el-icon size="large">
+              <Message />
+            </el-icon>
             Email Address
           </div>
-          <div class="ml-3">teleptean.ghe@gmail.com</div>
+          <div class="ml-3">
+            teleptean.ghe@gmail.com
+          </div>
           <!-- <div>
             <el-button
               size="large"
@@ -72,17 +82,17 @@
 </template>
 
 <script setup>
-import { defineComponent } from "vue";
-const config = useRuntimeConfig();
-import { GoogleMap, Marker } from "vue3-google-map";
-import { Location, Phone, Message } from "@element-plus/icons-vue";
+import { defineComponent } from 'vue'
+import { GoogleMap, Marker } from 'vue3-google-map'
+import { Location, Phone, Message } from '@element-plus/icons-vue'
+const config = useRuntimeConfig()
 const center = {
   lat: parseFloat(config.public.LATITUDE),
-  lng: parseFloat(config.public.LONGITUDE),
-};
-const address = "Str. Unirii 1C, Ocna Sugatag,Maramures, România,";
+  lng: parseFloat(config.public.LONGITUDE)
+}
+const address = 'Str. Unirii 1C, Ocna Sugatag,Maramures, România,'
 const callClient = (phone) => {
-  const nodash = phone.replace(/-/g, "");
-  window.location = "tel:+4" + nodash;
-};
+  const nodash = phone.replace(/-/g, '')
+  window.location = 'tel:+4' + nodash
+}
 </script>

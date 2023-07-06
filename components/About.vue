@@ -1,7 +1,9 @@
 <template>
   <div>
     <div style="margin-top: 5vh">
-      <div class="text-2xl text-center"  ref="target1">Despre Pensiunea Teleptean</div>
+      <div ref="target1" class="text-2xl text-center">
+        Despre Pensiunea Teleptean
+      </div>
       <div class="flex justify-center mt-5">
         <div class="details">
           {{ config.public.aboutDetails }}
@@ -18,17 +20,17 @@
           >
             <RoomCard
               :link="item.link"
-              :hideOverlay="item.hideOverlay"
+              :hide-overlay="item.hideOverlay"
               :image="item.image"
-              :roomName="item.name"
+              :room-name="item.name"
               :details="item.details"
               button="Vezi"
               :title="item.title"
-            ></RoomCard>
+            />
           </div>
         </div>
       </div>
-      <div class="pa-2" v-else>
+      <div v-else class="pa-2">
         <Customfade>
           <div
             v-for="(item, index) in filteredList"
@@ -39,13 +41,13 @@
           >
             <RoomCard
               :link="item.link"
-              :hideOverlay="item.hideOverlay"
+              :hide-overlay="item.hideOverlay"
               :image="item.image"
-              :roomName="item.name"
+              :room-name="item.name"
               :details="item.details"
               button="Vezi"
               :title="item.title"
-            ></RoomCard>
+            />
           </div>
         </Customfade>
       </div>
@@ -59,22 +61,22 @@ const config = useRuntimeConfig()
 // TODO -Customize or fetch from api
 const list = ref([
   {
-    title: "Apartament",
+    title: 'Apartament',
     link: '17',
-    image: "https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00781_ff602c0994.jpg",
+    image: 'https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00781_ff602c0994.jpg',
     hideOverlay: false,
     details:
-      "Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit. Începeți dimineața într-un cadru elegant cu micul dejun gratuit, bogat si variat.",
+      'Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit. Începeți dimineața într-un cadru elegant cu micul dejun gratuit, bogat si variat.'
   },
   {
-    title: "Camera dubla",
+    title: 'Camera dubla',
     link: '15',
-    image: "https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00967_bff4aadeee.jpg",
+    image: 'https://teleptean.s3.eu-west-3.amazonaws.com/DSC_00967_bff4aadeee.jpg',
     hideOverlay: true,
-    details: "Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit"
-  },
-]);
-const { filteredList, target: target1 } = useCustomFade(list);
+    details: 'Cameră frumoasă și spațioasă, cu paturi king-size și un confort sporit'
+  }
+])
+const { filteredList, target: target1 } = useCustomFade(list)
 </script>
 
 <style scoped>
