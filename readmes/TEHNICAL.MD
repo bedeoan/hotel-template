@@ -52,5 +52,7 @@ basic text animation
 -bookbutton not working because not enought height in child comp. - (dialog not opening)
 and parent dosn't not have any element that occupy all screen
 carefull with z-index !!
+
+[ ] don't use eleemtn ui type="warning" stuf tailiwnd will overrrid !!
 -------
 [ ] analyste from seo perspective !!!

@@ -9,6 +9,9 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
   ],
+  corePlugins: {
+    preflight: true,
+  },
   theme: {
     extend: {},
   },

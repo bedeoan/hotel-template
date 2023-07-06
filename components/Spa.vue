@@ -8,12 +8,6 @@
           src="https://www.ofertesejurromania.ro/wp-content/uploads/2016/06/Statiunea_Ocna_Sugatag-1.jpg"
         />
       </div>
-      <div class="overlay1">
-        <img
-          src="https://www.teleptean.ro/images/pool/piscina.jpg"
-          style="border-radius: 20px"
-        />
-      </div>
       <div class="overlay2">
         <img
           src="https://teleptean.s3.eu-west-3.amazonaws.com/Group_1_8_400b75a02c.png"

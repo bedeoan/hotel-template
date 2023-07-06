@@ -1,26 +1,25 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-      '@nuxtjs/tailwindcss',
-      '@element-plus/nuxt',
-      '@nuxtjs/device',
-      '@vueuse/nuxt',
+    "@nuxtjs/tailwindcss",
+    "@element-plus/nuxt",
+    "@nuxtjs/device",
+    "@vueuse/nuxt",
   ],
-  
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
-    }
+      autoprefixer: {},
+    },
   },
   build: {
-    transpile: ['gsap'],
+    transpile: ["gsap"],
   },
   runtimeConfig: {
     secret: process.env.SECRET,
     public: {
-      ...process.env
-    }
-  }
+      ...process.env,
+    },
+  },
 });

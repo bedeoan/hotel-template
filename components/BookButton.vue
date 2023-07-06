@@ -3,19 +3,20 @@
     <div v-if="withArrow" class="animate-bounce flex justify-center mb-2">
       <el-icon :size="30" color="#409EFC"><Bottom /></el-icon>
     </div>
-    <el-button
+    <button
       @click="
         () => {
           dialogVisible = true;
           markConversion();
         }
       "
-      class="flex row"
-      type="primary"
+      :style="$device.isMobile ? 'width:50vw' : ''"
+      class="bg-blue-400 hover:scale-110 text-white font-bold py-2 px-4 rounded"
     >
       <span v-if="label">{{ label }}</span>
       <span v-else>{{ config.public.bookButton }}</span>
-    </el-button>
+    </button>
+
     <client-only>
       <el-dialog
         :width="$device.isDesktop ? '20%' : '80%'"
@@ -61,6 +62,6 @@ const callClient = (phone) => {
 };
 const props = defineProps({
   label: String,
-  withArrow: Boolean
+  withArrow: Boolean,
 });
 </script>

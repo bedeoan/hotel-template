@@ -75,15 +75,14 @@
             </div>
           </div>
         </div>
-        <div class="ml-2">
+        <div class="ml-2 mt-5">
           <nuxt-link to="/Book">
-            <el-button
+            <button
               :style="$device.isMobile ? 'width:50vw' : ''"
-              type="warning"
-              size="large"
-              class="mt-5 hover:scale-110"
-              >{{ config.public.BookNow }}</el-button
+              class="bg-blue-400 hover:scale-110 text-white font-bold py-2 px-4 rounded"
             >
+              Rezerva
+            </button>
           </nuxt-link>
         </div>
       </div>
