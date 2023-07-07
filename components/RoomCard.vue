@@ -12,7 +12,7 @@
           <div class="text-white text-sm px-5 mx-2 mt-2 my-5">
             {{ details }}
           </div>
-          <div class="mt-2 ml-5">
+          <div v-if="$device.isDesktop" class="mt-2 ml-5">
             <button class="bg-orange-400 hover:scale-110 text-white py-1 px-4 rounded">{{ buttonText }}</button>
           </div>
         </div>

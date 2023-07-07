@@ -3,7 +3,7 @@
     <div class="flex images" :style="$device.isMobile ? 'height:60vh' : 'height:90vh'">
       <img
         :style="$device.isMobile ? 'height:50vh' : 'height:90vh'"
-        :src="config.public.COVER1"
+        :src="$device.isDesktop ? config.public.COVER1 : config.public.COVER1_MOBILE"
         alt="Hotel Image"
       >
       <div v-if="!$device.isMobile">
