@@ -7,7 +7,8 @@ Strapi Node js & aws - s3
 
 ## All custom information is set in .env but can also be fetched from the backend
 information that is saved in in strapi:
-    room details and images
-    gallery images
+- room details and images
+- gallery images
 
-For 1 click deployments you can use easy panel
+## For 1 click deployments you can use easy panel
+- link for custom recepie comming soon..
