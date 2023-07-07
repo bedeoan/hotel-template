@@ -24,7 +24,7 @@
               :image="item.image"
               :room-name="item.name"
               :details="item.details"
-              button="Vezi"
+              buttonText="Vezi"
               :title="item.title"
             />
           </div>
@@ -45,7 +45,6 @@
               :image="item.image"
               :room-name="item.name"
               :details="item.details"
-              button="Vezi"
               :title="item.title"
             />
           </div>
