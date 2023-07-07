@@ -47,7 +47,7 @@
 import { CircleCheck } from '@element-plus/icons-vue'
 const route = useRoute()
 const config = useRuntimeConfig()
-const { data: room } = await useFetch(
+const { data: room } = useFetch(
   `${config.public.API_URL}/rooms/${route.params.id}`
 )
 const facilities = ref([

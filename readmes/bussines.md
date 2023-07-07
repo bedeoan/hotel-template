@@ -1,16 +1,13 @@
-## Intrebari 
-- ce poze pun ??
--cum imi dau seama ca rezevarea a venit din site ? sau ca site-ul meu este bun..??
--o zona de oferte gen 4 peroanse 7 zile un pret anume...
+## Basic presentation website in Nuxt3 - For basic Guest house
+### Frontend
+Nuxt3, Vue,Tailwind, Elementui
 
-#### Ce este nevoie sa fac conversie
+### Backend
+Strapi Node js & aws - s3
 
--dns schimbat
--activat pluginuri de urmarire
--optimizare seo si mobile (pus intrebari cat de bine arata fata de altele ??)
+## All custom information is set in .env but can also be fetched from the backend
+information that is saved in in strapi:
+    room details and images
+    gallery images
 
-## Pornit campanie de google
--o campanie basic, google (1.000 lei)
--500 lei la raul...
-
--don' forget about hosting please switch cu totul , 200 lei mie !!!
+For 1 click deployments you can use easy panel

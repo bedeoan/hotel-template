@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <About class="my-20" />
+    <AboutSection class="my-20" />
     <Facilities class="my-20" />
     <Spa v-if="$device.isDesktop" />
     <BeHappy class="my-5" />

@@ -53,12 +53,11 @@
 </template>
 
 <script setup>
-import { User, Phone, Check, Bottom } from '@element-plus/icons-vue'
+import { Phone, Bottom } from '@element-plus/icons-vue'
 const config = useRuntimeConfig()
 const dialogVisible = ref(false)
 const markConversion = () => {
   // TODO mark as conversion
-  console.log('da')
 }
 const callClient = (phone) => {
   const nodash = phone.replace(/-/g, '')

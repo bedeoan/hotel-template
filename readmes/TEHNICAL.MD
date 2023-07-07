@@ -1,58 +1,49 @@
-### Dev stage
--decide on framework for pickers and stufff, q-select like shit
--dummy sections, llok good
+## use node 16.16 for frontend and 14.13 for backend
+### Dev stages
+-decide on ui framework for pickers and stufff, q-select, q-dialog, q-btn
+-make dummy sections
 -decide on how to handle data fetching
 -dinamic contect from api, use env everywhere 
--make it responsive ok
--add interaction
+-make it responsive for mobile
+-make page more dinamic (animate library)
+-Linting, Seo, Performance
 
-# cum fac sa nu mai trec in nuxt config inca odata variabilele din env. ?
+## Stack
+tailwind + element ui 
+!! Note: be carefull on when to use each element because tailwind overrides element ui css.
+you can set a param in tailwind.config.js but not ok.
 
+You see problem only when you build project and run it.
+    don't use eleemtn ui type="warning" stuf tailiwnd will overrrid !!
 
-## ce am invata
-
-tailwind  - syntatx
-element ui - syntax
--cum faci incadrare la o poza cu tailwind din cap ?
--tailwind nu e responsive pe mobile in anumite situatii ? care ?
-
-### ce nu e clar
--daca vreau button mare pe element ui
--daca vreau un overlay in mod elegant
--cum fac overlay in mod responsive ?? ce probleme are un overlay ?? 
--bug fantom pe ssr computed stuf pe componentele de element ui.
-
-## code decision
-[ ] Element ui -  fa un import general pentu icons si altele si acol pui tot si il folosesti
-[ ] Decizie cod curat Responsive -  all components should be mobile and desktop separat, only simple stuff do with breakpoints
-
-## tehnic question (how is best way)
-[ ] on the fly crop image and show what part you need
-
-## nu uita si de tailwind elements ?? poate poti folosi in loc de element ui ???
-vezi dimensiune
-vezi usurinta
+## Element ui 
+Must use client-only on dialog and some other components
+Annoing to use import for each icon element-ui 
 
 
-## what have i learned ??
-svg is cool , should take tutorial ..., green sock
-basic text animation 
+## Code structuring decision & convensions
+for simplicity:
+complex components should be mobile and desktop separat
+only simple components are made with css breakpoints 
+Never use px for dimensions
+when to use w-1/3 and when when flex / col
+## tehnic chalenge - how to
+- on the fly crop image and show what part you need
 
+## what have i learned
+-green sock examples (animate fade in)
 
-## todo 9-10
-[ ] Basic text animation & small deffects!
-[ ] margins and widths for all devices
-[ ] repair first click problem
-[ ] replace element ui, shity elements there
-
-
-### what have i learned , how am i better ?
-!!! client only on some compoennts!!!!
--custom fade vueuse and custom component with slot - sweet
+### what have i learned, Sweet tehnical stuff
+-use slot for list of elements with fade effect
+-tailwind not responsive and not looking the way you planned in some situations be carefull wth text-xs
+## Gotchas this project
 -bookbutton not working because not enought height in child comp. - (dialog not opening)
 and parent dosn't not have any element that occupy all screen
-carefull with z-index !!
+-always be carefull with z-index when dealing with buttons
+-fetch directly in setup - gives eslint error for await. but if put it into function,can't to direct asignation for variables
 
-[ ] don't use eleemtn ui type="warning" stuf tailiwnd will overrrid !!
--------
-[ ] analyste from seo perspective !!!
+## what can be improved in this project
+-make css overlay function with adaptable height by the parent and use it everywhere
+-a more conventional way of initalizing data in script setup.
+
+

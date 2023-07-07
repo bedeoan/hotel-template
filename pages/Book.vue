@@ -13,7 +13,7 @@
 
 <script setup>
 const config = useRuntimeConfig()
-const { data: rooms } = await useFetch(`${config.public.API_URL}/rooms`)
+const { data: rooms } = useFetch(`${config.public.API_URL}/rooms`)
 const sortByPrice = function (a, b) {
   if (a.price > b.price) {
     return 1

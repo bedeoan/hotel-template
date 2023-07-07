@@ -125,7 +125,8 @@
 import { ArrowDown } from '@element-plus/icons-vue'
 const config = useRuntimeConfig()
 const isOpen = ref(false)
-const { data: rooms } = await useFetch(
+
+const { data: rooms } = useFetch(
   `${config.public.API_URL}/rooms`
 )
 const roomsWithPrice = computed(() =>
