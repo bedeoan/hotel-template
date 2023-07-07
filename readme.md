@@ -1,4 +1,5 @@
 ## Basic presentation website in Nuxt3 - For Guest house or hotel
+- Example: https://teleptean.ro/
 ### Frontend Stack
 Nuxt3, Vue,Tailwind, Elementui
 
