@@ -37,10 +37,9 @@ when to use w-1/3 and when when flex / col
 -use slot for list of elements with fade effect
 -tailwind not responsive and not looking the way you planned in some situations be carefull wth text-xs
 ## Gotchas this project
--bookbutton not working because not enought height in child comp. - (dialog not opening)
-and parent dosn't not have any element that occupy all screen
--always be carefull with z-index when dealing with buttons
--fetch directly in setup - gives eslint error for await. but if put it into function,can't to direct asignation for variables
+### bookbutton not working because not enought height in child comp. - (dialog not opening) and parent dosn't not have any element that occupy all screen
+### always be carefull with z-index when dealing with buttons
+### fetch directly in setup - gives eslint error for await. but if put it into function,can't to direct asignation for variables
 
 ## what can be improved in this project
 -make css overlay function with adaptable height by the parent and use it everywhere
