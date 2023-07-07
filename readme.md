@@ -14,5 +14,5 @@ information that is saved in in strapi:
 https://github.com/bedeoan/hotel4/readmes
 
 ## For 1 click deployments you can use easy panel
-- link for custom recepie comming soon. Can use:
+- link for custom template comming soon. Can use:
     https://easypanel.io/
