@@ -17,15 +17,17 @@
     </div>
     <div class="flex-1">
       <div class="text-4xl text-center">
-        Descopera Tratamentul Balneo Climateric
+        {{ config.public.SPA_TITLE }}
       </div>
       <div class="text-center my-5" style="width:40vw">
-        Tratamentul balneo-climateric oferă numeroase beneficii pentru sănătate și bunăstare. Acest tip de terapie combină proprietățile vindecătoare ale apelor minerale și ale climatului, creând un mediu ideal pentru relaxare și refacere. Beneficiile tratamentului balneo-climateric sunt multiple: stimularea circulației sanguine și limfatice, reducerea durerilor articulare și musculare, ameliorarea stresului și anxietății, întărirea sistemului imunitar, detoxifierea organismului, îmbunătățirea sănătății pielii și a funcției respiratorii. De asemenea, acest tratament poate contribui la reglarea tensiunii arteriale, la reducerea insomniei și la ameliorarea afecțiunilor reumatice. Prin combinația dintre apele minerale și climatul specific, tratamentul balneo-climateric devine o experiență terapeutică holistică, având efecte benefice asupra întregului organism.
+        {{ config.public.SPA_DESCRIPTION }}
       </div>
     </div>
   </div>
 </template>
-
+<script setup>
+const config = useRuntimeConfig()
+</script>
 <style scoped>
 .facilitylist {
   display: flex;

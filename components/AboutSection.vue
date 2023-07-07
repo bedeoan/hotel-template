@@ -2,7 +2,7 @@
   <div>
     <div style="margin-top: 5vh">
       <div ref="target1" class="text-2xl text-center">
-        Despre Pensiunea Teleptean
+        Despre {{ config.public.HOTEL_NAME }}
       </div>
       <div class="flex justify-center mt-5">
         <div class="details">

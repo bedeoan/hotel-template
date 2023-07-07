@@ -88,6 +88,7 @@
     <AboutSection class="my-20" />
     <Facilities class="my-20" />
     <Spa v-if="$device.isDesktop" />
+    <SpaMobile v-else />
     <BeHappy class="my-5" />
     <ContactForm />
   </div>
