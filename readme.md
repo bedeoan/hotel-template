@@ -1,8 +1,8 @@
 ## Basic presentation website in Nuxt3 - For Guest house or hotel
-### Frontend
+### Frontend Stack
 Nuxt3, Vue,Tailwind, Elementui
 
-### Backend
+### Recomanded Backend
 Strapi Node js & aws - s3
 
 ## All custom information is set in .env but can also be fetched from the backend
@@ -14,4 +14,5 @@ information that is saved in in strapi:
 https://github.com/bedeoan/hotel4/readmes
 
 ## For 1 click deployments you can use easy panel
-- link for custom recepie comming soon..
+- link for custom recepie comming soon. Can use:
+    https://easypanel.io/
