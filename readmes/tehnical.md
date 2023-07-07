@@ -23,26 +23,28 @@ Annoing to use import for each icon element-ui
 
 ## Code structuring decision & convensions
 for simplicity:
-complex components should be mobile and desktop separat
-only simple components are made with css breakpoints 
-Never use px for dimensions
-when to use w-1/3 and when when flex / col
+    complex components should be mobile and desktop separat
+    only simple components are made with css breakpoints 
+    Never use px for dimensions
+    when to use w-1/3 and when when flex / col
+
 ## tehnic chalenge - how to
-- on the fly crop image and show what part you need
+    on the fly crop image and show what part you need
 
 ## what have i learned
--green sock examples (animate fade in)
+    green sock examples (animate fade in)
 
-### what have i learned, Sweet tehnical stuff
--use slot for list of elements with fade effect
--tailwind not responsive and not looking the way you planned in some situations be carefull wth text-xs
+## what have i learned, Sweet tehnical stuff
+    use slot for list of elements with fade effect
+    tailwind not responsive and not looking the way you planned in some situations be carefull wth text-xs
+
 ## Gotchas this project
-### bookbutton not working because not enought height in child comp. - (dialog not opening) and parent dosn't not have any element that occupy all screen
-### always be carefull with z-index when dealing with buttons
-### fetch directly in setup - gives eslint error for await. but if put it into function,can't to direct asignation for variables
+    bookbutton not working because not enought height in child comp. - (dialog not opening) and parent dosn't not have any element that occupy all screen
+    always be carefull with z-index when dealing with buttons
+    fetch directly in setup - gives eslint error for await. but if put it into function,can't to direct asignation for variables
 
 ## what can be improved in this project
--make css overlay function with adaptable height by the parent and use it everywhere
--a more conventional way of initalizing data in script setup.
+    make css overlay function with adaptable height by the parent and use it everywhere
+    a more conventional way of initalizing data in script setup.
 
 
