@@ -1,4 +1,4 @@
-## Basic presentation website in Nuxt3 - For basic Guest house
+## Basic presentation website in Nuxt3 - For Guest house or hotel
 ### Frontend
 Nuxt3, Vue,Tailwind, Elementui
 
