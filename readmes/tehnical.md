@@ -23,10 +23,10 @@ Annoing to use import for each icon element-ui
 
 ## Code structuring decision & convensions
 for simplicity:
-  complex components should be mobile and desktop separat
-  only simple components are made with css breakpoints 
-  Never use px for dimensions
-  when to use w-1/3 and when when flex / col
+-complex components should be mobile and desktop separat
+-only simple components are made with css breakpoints 
+-Never use px for dimensions
+-when to use w-1/3 and when when flex / col
 
 ## tehnic chalenge - how to
     on the fly crop image and show what part you need
