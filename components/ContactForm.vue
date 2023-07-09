@@ -50,7 +50,7 @@
             Email Address
           </div>
           <div class="ml-3">
-            teleptean.ghe@gmail.com
+            {{ config.public.CONTACT_EMAIL }}
           </div>
           <!-- <div>
             <el-button
