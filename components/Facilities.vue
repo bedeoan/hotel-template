@@ -2,7 +2,7 @@
   <div class="flex row parent">
     <div class="flex-1">
       <div class="text-4xl text-center">
-        Facilitati Pensiunea Teleptean
+        {{ config.public.HOTEL_NAME }}
       </div>
 
       <div class="text-center my-5 px-3">
@@ -60,6 +60,7 @@
 
 <script setup lang="ts">
 import { CircleCheck, InfoFilled } from '@element-plus/icons-vue'
+const config = useRuntimeConfig()
 const list = ref([
   {
     name: 'Tratament Balneoclimateric'

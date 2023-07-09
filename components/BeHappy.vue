@@ -31,7 +31,7 @@ const config = useRuntimeConfig()
 <style scoped>
 .coverimg {
   width: 100vw;
-  height: 38vh;
+  height: 45vh;
   object-fit: cover;
 }
 .overlay {
@@ -52,7 +52,7 @@ const config = useRuntimeConfig()
   position: absolute; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
-  height: 30vh; /* Full height (cover the whole page) */
+  height: 32vh; /* Full height (cover the whole page) */
   top: 50%;
   transform: translate(-50%, -50%); /* This is important to truly center the child */
   left: 50%;

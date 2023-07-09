@@ -8,7 +8,7 @@
               <img :style="$device.isMobile ? 'width: 5vw' : 'width:3vw;'" src="/logo.png">
             </div>
             <div>
-              Pensiunea Teleptean
+              {{ config.public.HOTEL_NAME }}
             </div>
           </nuxt-link>
         </div>

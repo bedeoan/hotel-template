@@ -5,13 +5,13 @@
         <img style="width: 50px" src="/logo.png">
       </div>
       <div v-if="!$device.isMobile">
-        {{ name }}
+        {{ config.public.HOTEL_NAME }}
       </div>
       <div v-if="!$device.isMobile" style="width: 30vw">
-        {{ reclama }}
+        {{ config.public.reclama }}
       </div>
       <div v-else>
-        {{ reclamaMobile }}
+        {{ config.public.reclamaMobile }}
       </div>
       <div class="mt-5">
         <a href="#">
@@ -61,7 +61,7 @@
             Contact
           </div>
           <div>
-            {{ city }}
+            {{ config.public.city }}
           </div>
           <div class="mt-5">
             CUI: {{ config.public.CUI }}
@@ -79,14 +79,5 @@
 
 <script setup>
 const config = useRuntimeConfig()
-
-const name = 'Pensiunea Teleptean'
-const address = 'Str. Unirii 1C, Ocna Sugatag'
-const city = '437205 Ocna Sugag, România'
-const phone = '(+40) 262-374177'
 const email = ''
-const reclama =
-  'Daca treci prin Maramures si ai nevoie de o un loc de cazare primitor, Pensiunea Teleptean este alegerea ideala.'
-const reclamaMobile =
-  'Daca treci prin Maramures, Pensiunea Teleptean este alegerea ideala.'
 </script>

@@ -45,4 +45,5 @@ for simplicity:
 - make css overlay function with adaptable height by the parent and use it everywhere
 - a more conventional way of initalizing data in script setup.
 
-
+## Known issues
+- on certain models of iphone/safari the height of element is not rendered correctly (this issues is very hard to replicate, only simulable on iphone hardware, browserstack does't simulate correctly)
