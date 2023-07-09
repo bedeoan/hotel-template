@@ -26,19 +26,6 @@
           <el-icon><Check /></el-icon>
           {{ option.name }}
         </div>
-        <nuxt-link
-          class="ml-2"
-          :to="{ name: 'room-id', params: { id: room.id } }"
-        >
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-sm text-white py-2 px-4 border border-blue-700 rounded"
-          >
-            <el-icon>
-              <InfoFilled />
-            </el-icon>
-            {{ config.public.moreInfo }}
-          </button>
-        </nuxt-link>
       </div>
 
       <div class="pt-2 flex ml-5">
@@ -50,6 +37,18 @@
         <div class="text-neutral-300">
           x {{ room.pers }} pers
         </div>
+        <nuxt-link
+          class="ml-5"
+          :to="{ name: 'room-id', params: { id: room.id } }"
+        >
+          <button
+          >
+            <el-icon>
+              <InfoFilled />
+            </el-icon>
+            {{ config.public.moreInfoMobile }}
+          </button>
+        </nuxt-link>
       </div>
       <div class="pt-2 ml-5 flex row">
         <div>
